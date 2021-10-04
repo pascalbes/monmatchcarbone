@@ -8,6 +8,7 @@ equipements:
       - matériel
       - textile
   unité: kgCO2e
+  applicable si: profil . sport > 0
 
 # -------
 # MATERIEL
@@ -29,7 +30,7 @@ equipements . matériel . Ballons de foot ou basket:
   unité: kgCO2e
 
 equipements . matériel . Ballons de foot ou basket . nombre:
-  question: Nombre de ballons de foot ou basket ?
+  question: Nombre de ballons de foot ⚽️ ou basket 🏀 ?
   par défaut: 1
   unité: ballons
 
@@ -46,7 +47,7 @@ equipements . matériel . Ballons de volley ou handball:
   unité: kgCO2e
 
 equipements . matériel . Ballons de volley ou handball . nombre:
-  question: Nombre de ballons de volley ou handball ?
+  question: Nombre de ballons de volley 🏐 ou handball 🤾‍♀️ ?
   par défaut: 1
   unité: ballons
 
@@ -70,6 +71,7 @@ equipements . textile:
   unité: kgCO2e
 
 equipements . textile . maillots:
+  icônes: 👕
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -82,6 +84,7 @@ equipements . textile . maillots . empreinte:
   unité: kgCO2e
 
 equipements . textile . short et cycliste:
+  icônes: 🩳
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -94,6 +97,7 @@ equipements . textile . short et cycliste . empreinte:
   unité: kgCO2e
 
 equipements . textile . chaussures:
+  icônes: 👟
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -106,6 +110,7 @@ equipements . textile . chaussures . empreinte:
   unité: kgCO2e
 
 equipements . textile . survêtements:
+  icônes: 
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -118,6 +123,7 @@ equipements . textile . survêtements . empreinte:
   unité: kgCO2e
 
 equipements . textile . chaussettes:
+  icônes: 🧦
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -130,6 +136,7 @@ equipements . textile . chaussettes . empreinte:
   unité: kgCO2e
 
 equipements . textile . manteau:
+  icônes: 🧥
   formule: empreinte * nombre
   unité: kgCO2e
 

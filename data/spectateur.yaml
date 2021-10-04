@@ -11,6 +11,7 @@ spectateur:
   unité: kgCO2e
 
 spectateur . présent:
+  applicable si: profil . sport > 0
   question: Êtes-vous également spectateur, virtuel ou réel, d'événements sportifs ?
   par défaut: oui
 
@@ -37,8 +38,8 @@ spectateur . numérique:
 # ----------
 
 spectateur . numérique . télévision:
-  unité: kgCO2e
   icônes: 📺
+  unité: kgCO2e
   formule:
     somme:
       - visionnage
@@ -83,6 +84,7 @@ spectateur . numérique . télévision . matériel . empreinte:
 # ----------
 
 spectateur . numérique . tablette:
+  # icônes: 🖥
   formule: nombre * empreinte
   unité: kgCO2e
 
@@ -101,6 +103,7 @@ spectateur . numérique . tablette . empreinte:
 # ----------
 
 spectateur . numérique . ordinateur:
+  icônes: 💻
   formule: nombre * empreinte
   unité: kgCO2e
 
@@ -118,6 +121,7 @@ spectateur . numérique . ordinateur . empreinte:
 # ----------
 
 spectateur . numérique . téléphone:
+  icônes: 📱
   formule: nombre * empreinte
   unité: kgCO2e
 

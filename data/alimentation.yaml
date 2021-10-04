@@ -19,6 +19,7 @@ alimentation:
       - compléments
         # à venir peut-être dans une prochaine version
         # - laitages
+  applicable si: profil . sport > 0
 
 
 # --------
@@ -33,7 +34,7 @@ alimentation . compléments:
       - sodas
 
 alimentation . compléments . barres:
-  icônes: 👕
+  icônes: 🍫
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -46,7 +47,7 @@ alimentation . compléments . barres . nombre:
   par défaut: 4
 
 alimentation . compléments . boisson énergétique:
-  icônes: 👕
+  icônes: 🧃
   formule: empreinte * nombre
   unité: kgCO2e
 
@@ -60,7 +61,7 @@ alimentation . compléments . boisson énergétique . nombre:
   unité: L
 
 alimentation . compléments . sodas:
-  icônes: 👕
+  icônes: 🥤
   formule: empreinte * nombre
   unité: kgCO2e
 

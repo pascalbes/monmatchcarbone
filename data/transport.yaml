@@ -14,6 +14,7 @@ transport:
       # - train
       # - métro ou tram
       # - vélo
+  applicable si: profil . sport > 0
         
 
 transport . voiture:
@@ -316,6 +317,7 @@ transport . voiture . âge:
     5 ans: 5
     10 ans: 10
 transport . voiture . construction amortie:
+  applicable si: propriétaire
   formule: 
     variations: 
       - si: propriétaire
@@ -376,14 +378,14 @@ transport . voiture . propriétaire:
 
 
 
-transport . voiture . notif proprio:
-  type: notification
-  formule: 
-    toutes ces conditions:
-      - propriétaire = non
-      - km > 0
-  description: | 
-    Vous n'êtes pas propriétaire d'une voiture, mais vous faites quand même des km : les questions suivantes concernont donc les voitures que vous empruntez en tant que passager ou conducteur (voiture de location, voiture d'amis).
+# transport . voiture . notif proprio:
+#   type: notification
+#   formule: 
+#     toutes ces conditions:
+#       - propriétaire = non
+#       - km > 0
+#   description: | 
+#     Vous n'êtes pas propriétaire d'une voiture, mais vous faites quand même des km : les questions suivantes concernont donc les voitures que vous empruntez en tant que passager ou conducteur (voiture de location, voiture d'amis).
 
 
 transport . avion:
@@ -604,7 +606,7 @@ transport . bus . impact par heure:
     - http://www.bilans-ges.ademe.fr/
 
 transport . bus . heures par semaine:
-  question: Combien d'heures passez-vous dans un bus par semaine ?
+  question: Combien d'heures passez-vous dans un bus 🚌 par semaine ?
   suggestions: 
     zéro: 0
     1h / jour: 7

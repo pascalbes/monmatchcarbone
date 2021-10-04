@@ -16,6 +16,7 @@ profil . sport:
       - hand
 
 profil . sport . basket:
+  icônes: 🏀
   unité: kgCO2e
   formule:
     variations: 
@@ -25,6 +26,7 @@ profil . sport . basket:
       - sinon: 0
 
 profil . sport . foot:
+  icônes: ⚽️
   unité: kgCO2e
   formule:
     variations: 
@@ -34,6 +36,7 @@ profil . sport . foot:
       - sinon: 0
 
 profil . sport . hand:
+  icônes: 🤾‍♀️
   unité: kgCO2e
   formule:
     variations: 
@@ -43,6 +46,7 @@ profil . sport . hand:
       - sinon: 0
 
 profil . sport . volley:
+  icônes: 🏐
   unité: kgCO2e
   formule:
     variations: 
