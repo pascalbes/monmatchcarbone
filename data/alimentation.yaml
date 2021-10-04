@@ -572,7 +572,7 @@ facteur carbone CO2:
 
 alimentation . déchets . niveau d'engagement: 
   titre: Engagement zéro déchet
-  question: Êtes-vous engagé dans une démarche zéro déchet ?
+  question: Êtes-vous engagé dans une démarche zéro déchet lolilol ?
   description: |
     L'engagement zéro déchet consiste à réduire au maximum les achats d'aliments emballés (les yaourts sont donc exclus par exemple) et donc privilégier le vrac, 
     le compostage (en jardin ou en vermicompost) des déchets organiques, etc.
@@ -604,4 +604,3 @@ alimentation . déchets . facteur:
         - si: niveau d'engagement = 'en partie'
           alors: 0.6
         - sinon: 0.3
-

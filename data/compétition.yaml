@@ -1,0 +1,192 @@
+compétition: 
+  couleur: '#91AEC1'
+  icônes: 🍽
+  description: | 
+    Pratique en compétition
+  formule: 
+    variations: 
+      - si: pratique
+        alors:
+          somme:
+            - déplacements
+      - sinon: 0
+
+compétition . pratique :
+  question: Compétition ?
+  par défaut: oui
+
+# compétition . transport :
+#   formule:
+#     somme: 
+#       - Départementale
+#       - Régionale
+
+# compétition . transport . echelle : 
+#   icônes: 📷
+#   titre: Echelle compétition
+#   question: A quelle échelle se font ces compétitions ?
+#   une possibilité: 
+#     choix obligatoire: oui
+#     possibilités: 
+#       - Départementale
+#       - Régionale
+#       # - Nationale
+#       # - Internationale
+
+# compétition . transport . echelle . Départementale:
+# compétition . transport . echelle . Régionale:
+
+# compétition . transport . Départementale :
+#   formule: nombre matches * conso transport
+#   applicable si: echelle = 'Départementale'
+#   unité: kgCO2e
+
+# compétition . transport . Départementale . conso transport :
+#   unité: kgCO2e/unités
+#   formule: 
+#     variations: 
+#       - si: moyen transport = 'Voiture'
+#         alors: 2500
+#       - si: moyen transport = 'moto'
+#         alors: 1200
+
+# compétition . transport . Départementale . nombre matches :
+#   question : A combien de match / tournois en extérieur vous rendez-vous par année dans votre département ?
+#   par défaut: 5 unités
+#   unité: unités
+#   suggestions:
+#     zéro: 0
+#     1 fois / mois: 12
+#     toutes les semaines: 52
+
+# compétition . transport . Départementale . moyen transport :
+#   question: Quel moyen de transport utilisez-vous en général (département) ?
+#   une possibilité: 
+#     possibilités: 
+#       - Voiture
+#       - moto
+#       # - bus
+#       # - train
+#       # - vélo ou à pied
+
+# compétition . transport . Départementale . moyen transport . Voiture :
+# compétition . transport . Départementale . moyen transport . moto :
+
+
+
+# compétition . transport . Régionale :
+#   formule: nombre matches * conso transport
+#   applicable si: echelle = 'Régionale'
+#   unité: kgCO2e
+
+# compétition . transport . Régionale . conso transport :
+#   unité: kgCO2e/unités
+#   formule: 
+#     variations: 
+#       - si: moyen transport = 'Voiture'
+#         alors: 2500
+#       - si: moyen transport = 'moto'
+#         alors: 1200
+
+# compétition . transport . Régionale . nombre matches :
+#   question : A combien de match / tournois en extérieur vous rendez-vous par année dans votre région ?
+#   par défaut: 5 unités
+#   unité: unités
+#   suggestions:
+#     zéro: 0
+#     1 fois / mois: 12
+#     toutes les semaines: 52
+
+# compétition . transport . Régionale . moyen transport :
+#   question: Quel moyen de transport utilisez-vous en général (région) ?
+#   une possibilité: 
+#     possibilités: 
+#       - Voiture
+#       - moto
+#       # - bus
+#       # - train
+#       # - vélo ou à pied
+
+# compétition . transport . Régionale . moyen transport . Voiture :
+# compétition . transport . Régionale . moyen transport . moto :
+
+
+
+compétition . déplacements:
+  formule:
+    somme: 
+      - Départementale
+      - Régionale
+
+compétition . déplacements . Départementale :
+  formule: nombre matches * conso transport
+  applicable si: présent
+  unité: kgCO2e
+
+compétition . déplacements . Départementale . présent: 
+  question: Départementale ?
+  par défaut: non
+
+compétition . déplacements . Départementale . conso transport :
+  unité: kgCO2e/unités
+  formule: 
+    variations: 
+      - si: moyen transport = 'Voiture'
+        alors: 2500
+      - si: moyen transport = 'moto'
+        alors: 1200
+
+compétition . déplacements . Départementale . nombre matches :
+  question : A combien de match / tournois en extérieur vous rendez-vous par année dans votre département ?
+  par défaut: 5 unités
+  unité: unités
+  suggestions:
+    zéro: 0
+    1 fois / mois: 12
+    toutes les semaines: 52
+
+compétition . déplacements . Départementale . moyen transport :
+  question: Quel moyen de transport utilisez-vous en général (département) ?
+  une possibilité: 
+    possibilités: 
+      - Voiture
+      - moto
+
+compétition . déplacements . Régionale :
+  formule: nombre matches * conso transport
+  applicable si: présent
+  unité: kgCO2e
+
+compétition . déplacements . Régionale . présent: 
+  question: Régionale ?
+  par défaut: non
+
+compétition . déplacements . Régionale . conso transport :
+  unité: kgCO2e/unités
+  formule: 
+    variations: 
+      - si: moyen transport = 'Voiture'
+        alors: 2500
+      - si: moyen transport = 'moto'
+        alors: 1200
+
+compétition . déplacements . Régionale . nombre matches :
+  question : A combien de match / tournois en extérieur vous rendez-vous par année dans votre région ?
+  par défaut: 5 unités
+  unité: unités
+  suggestions:
+    zéro: 0
+    1 fois / mois: 12
+    toutes les semaines: 52
+
+compétition . déplacements . Régionale . moyen transport :
+  question: Quel moyen de transport utilisez-vous en général (région) ?
+  une possibilité: 
+    possibilités: 
+      - Voiture
+      - moto
+
+compétition . déplacements . Départementale . moyen transport . Voiture :
+compétition . déplacements . Départementale . moyen transport . moto :
+compétition . déplacements . Régionale . moyen transport . Voiture :
+compétition . déplacements . Régionale . moyen transport . moto :

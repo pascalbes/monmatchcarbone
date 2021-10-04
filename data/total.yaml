@@ -16,11 +16,15 @@ bilan:
 
   formule: 
     somme: 
-      - logement
-      - transport
-      - alimentation
-      - numérique
-      - divers
+      - profil
+      # - compétition
+      - équipement
+      # - aaalim
+      # - logement
+      # - transport
+      # - alimentation
+      # - numérique
+      # - divers
       - services publics
   références: 
     - https://avenirclimatique.org/action/
