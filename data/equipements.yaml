@@ -1,0 +1,142 @@
+equipements:
+  couleur: '#91AEC1'
+  icônes: ⚽️
+  description: | 
+    Equipements
+  formule:
+    somme:
+      - matériel
+      - textile
+  unité: kgCO2e
+
+# -------
+# MATERIEL
+# ------
+
+equipements . matériel:
+  formule:
+    somme:
+      - Ballons de foot ou basket
+      - Ballons de volley ou handball
+  unité: kgCO2e
+
+equipements . matériel . Ballons de foot ou basket:
+  applicable si:
+    une de ces conditions: 
+      - profil . sport . foot . présent
+      - profil . sport . basket . présent
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+equipements . matériel . Ballons de foot ou basket . nombre:
+  question: Nombre de ballons de foot ou basket ?
+  par défaut: 1
+  unité: ballons
+
+equipements . matériel . Ballons de foot ou basket . empreinte:
+  valeur: 20
+  unité: kgCO2e/ballons
+
+equipements . matériel . Ballons de volley ou handball:
+  applicable si:
+    une de ces conditions: 
+      - profil . sport . volley . présent
+      - profil . sport . hand . présent
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+equipements . matériel . Ballons de volley ou handball . nombre:
+  question: Nombre de ballons de volley ou handball ?
+  par défaut: 1
+  unité: ballons
+
+equipements . matériel . Ballons de volley ou handball . empreinte:
+  valeur: 20
+  unité: kgCO2e/ballons
+
+# -------
+# TEXTILE
+# ------
+
+equipements . textile:
+  formule:
+    somme:
+      - maillots
+      - short et cycliste
+      - chaussures
+      - survêtements
+      - chaussettes
+      - manteau
+  unité: kgCO2e
+
+equipements . textile . maillots:
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+equipements . textile . maillots . nombre:
+  question: Maillots ?
+  par défaut: 0
+
+equipements . textile . maillots . empreinte:
+  formule: 25
+  unité: kgCO2e
+
+equipements . textile . short et cycliste:
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+equipements . textile . short et cycliste . nombre:
+  question: Shorts et cyclistes ?
+  par défaut: 0
+
+equipements . textile . short et cycliste . empreinte:
+  formule: 30
+  unité: kgCO2e
+
+equipements . textile . chaussures:
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+equipements . textile . chaussures . nombre:
+  question: Paire de chaussures ?
+  par défaut: 0
+
+equipements . textile . chaussures . empreinte:
+  formule: 25
+  unité: kgCO2e
+
+equipements . textile . survêtements:
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+equipements . textile . survêtements . nombre:
+  question: Survêtements ?
+  par défaut: 0
+
+equipements . textile . survêtements . empreinte:
+  formule: 25
+  unité: kgCO2e
+
+equipements . textile . chaussettes:
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+equipements . textile . chaussettes . nombre:
+  question: Paire de chaussettes ?
+  par défaut: 0
+
+equipements . textile . chaussettes . empreinte:
+  formule: 25
+  unité: kgCO2e
+
+equipements . textile . manteau:
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+equipements . textile . manteau . nombre:
+  question: Manteaux ?
+  par défaut: 0
+
+equipements . textile . manteau . empreinte:
+  formule: 25
+  unité: kgCO2e

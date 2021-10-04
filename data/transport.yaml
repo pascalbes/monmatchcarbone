@@ -9,12 +9,11 @@ transport:
   formule: 
     somme: 
       - voiture
-      - avion
       - deux roues thermique
       - bus
-      - train
-      - métro ou tram
-      - vélo
+      # - train
+      # - métro ou tram
+      # - vélo
         
 
 transport . voiture:
@@ -32,12 +31,13 @@ transport . voiture:
     
     Notons finalement qu'il est important de prendre en compte à la fois l'usage (les km parcourus) et la construction de ce véhicule de plus d'une tonne de matériaux divers.
     
-  formule: # Ici nous pourrions utiliser un "non applicable si: km = 0" mais un bug fait que la question km deviendra booléenne Oui/Non. Voir https://github.com/betagouv/mon-entreprise/issues/1367
-    variations: 
-      - si: km = 0
-        alors: 0
-      - sinon: (construction amortie + impact usage) / voyageurs
+  formule: (construction amortie + impact usage) / voyageurs # Ici nous pourrions utiliser un "non applicable si: km = 0" mais un bug fait que la question km deviendra booléenne Oui/Non. Voir https://github.com/betagouv/mon-entreprise/issues/1367
+  applicable si: présent
   unité: kgCO2e
+
+transport . voiture . présent:
+  question: Voiture ?
+  par défaut: non
 
 transport . voiture . voyageurs:
   question: Quel est le nombre moyen de voyageurs dans la voiture ?
@@ -99,7 +99,6 @@ transport . voiture . motorisation . hybride:
 transport . voiture . thermique: oui # sans le 'oui', une question vide est posée
 
 transport . voiture . gabarit:
-  applicable si: km > 0
   question: Quel est le gabarit de la voiture ?
   description: |
     Plus une voiture est lourde et haute donc avec une forte prise au vent, plus elle consomme donc plus elle pollue ! 
@@ -585,6 +584,11 @@ transport . bus:
   description: |
     ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alliance_Auch_ligne_6_Allées_Baylac.JPG/640px-Alliance_Auch_ligne_6_Allées_Baylac.JPG)
   formule: heures par semaine * impact par heure * nombre de semaines
+  applicable si: présent
+
+transport . bus . présent:
+  question: Bus ?
+  par défaut: non
 
 nombre de semaines: 
   formule: 52
@@ -654,13 +658,14 @@ transport . vélo . km:
 
 transport . deux roues thermique: 
   icônes: 🛵
-  applicable si: usager
+  applicable si: présent
   formule: empreinte * km
-transport . deux roues thermique . usager: 
-  question: Utilisez-vous un scooter ou une moto ?
+
+transport . deux roues thermique . présent:
+  question: Scooter ou moto ?
   description: |
     Les scooters et motos sont aujourd'hui très majoritairement des engins qui fonctionnent au pétrole. Les équivalents électriques ont fait leur apparition, mais timidement.
-  par défaut: oui
+  par défaut: non
 
 transport . deux roues thermique . km: 
   question: Combien de km faites-vous à l'année avec votre scooter ou moto ? 

@@ -17,8 +17,9 @@ bilan:
   formule: 
     somme: 
       - profil
+      - spectateur
       # - compétition
-      - équipement
+      # - equipements
       # - aaalim
       # - logement
       # - transport

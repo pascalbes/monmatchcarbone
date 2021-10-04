@@ -12,12 +12,71 @@ alimentation:
     Contrairement à ce que l'on entend souvent, la distance parcourue par nos aliments et la quantité d'emballages plastique sont au second plan.
   formule: 
     somme:
-      - petit déjeuner annuel
-      - déjeuner et dîner
-      - boisson
-      - déchets
+      # - petit déjeuner annuel
+      # - déjeuner et dîner
+      # - boisson
+      # - déchets
+      - compléments
         # à venir peut-être dans une prochaine version
         # - laitages
+
+
+# --------
+# COMPLEMENTS
+# --------
+
+alimentation . compléments:
+  formule:
+    somme:
+      - barres
+      - boisson énergétique
+      - sodas
+
+alimentation . compléments . barres:
+  icônes: 👕
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+alimentation . compléments . barres . empreinte:
+  formule: 5.35 # 5.35 / (durée * coefficient préservation)
+  unité: kgCO2e
+
+alimentation . compléments . barres . nombre:
+  question: Barres énergétiques
+  par défaut: 4
+
+alimentation . compléments . boisson énergétique:
+  icônes: 👕
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+alimentation . compléments . boisson énergétique . empreinte:
+  formule: 5.35 # 5.35 / (durée * coefficient préservation)
+  unité: kgCO2e/L
+
+alimentation . compléments . boisson énergétique . nombre:
+  question: Boissons énergétiques
+  par défaut: 4
+  unité: L
+
+alimentation . compléments . sodas:
+  icônes: 👕
+  formule: empreinte * nombre
+  unité: kgCO2e
+
+alimentation . compléments . sodas . empreinte:
+  formule: 5.35 # 5.35 / (durée * coefficient préservation)
+  unité: kgCO2e/L
+
+alimentation . compléments . sodas . nombre:
+  question: Sodas
+  par défaut: 10
+  unité: L
+
+
+
+
+
 
 alimentation . laitages: 
   description: Cette question est importante au moins en France, où l'on consomme beaucoup de lait de vache et dont la gastronomie est renommée pour son fromage. 
@@ -29,11 +88,12 @@ alimentation . laitages:
     Ensuite les quantités de 3 catégories sont demandées en kg/semaine : fromage et beurre, laitages, lait.
 
 
-
-
 alimentation . boisson: 
   icônes: 🥤🍷
-  formule: froide + chaude
+  formule:
+    somme:
+      - froide
+      - chaude
   
 alimentation . boisson . chaude: 
   formule:

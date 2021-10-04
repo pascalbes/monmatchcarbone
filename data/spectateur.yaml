@@ -1,0 +1,136 @@
+spectateur: 
+  couleur: '#91AEC1'
+  icônes: 📺
+  description: | 
+    La catégorie "spectateur" intègre l'impact du numérique et des déplacements pour assister à des événements sportifs
+  formule: 
+    somme:
+     - numérique
+    #  - déplacements
+  applicable si: présent
+  unité: kgCO2e
+
+spectateur . présent:
+  question: Êtes-vous également spectateur, virtuel ou réel, d'événements sportifs ?
+  par défaut: oui
+
+
+# ----------
+# ----------
+# ----------
+# NUMERIQUE
+# ----------
+# ----------
+# ----------
+
+spectateur . numérique:
+  formule:
+    somme:
+      - télévision
+      - ordinateur
+      - tablette
+      - téléphone
+  unité: kgCO2e
+
+# ----------
+# TELEVISION
+# ----------
+
+spectateur . numérique . télévision:
+  unité: kgCO2e
+  icônes: 📺
+  formule:
+    somme:
+      - visionnage
+      - matériel
+
+spectateur . numérique . télévision . nombre:
+  question: Télévision ?
+  par défaut: 10
+  unité: h
+
+spectateur . numérique . télévision . visionnage:
+  formule: empreinte * spectateur . numérique . télévision . nombre
+  applicable si: numérique . télévision . nombre > 0
+
+spectateur . numérique . télévision . visionnage . empreinte:
+  formule: 10
+  unité: kgCO2e/h
+
+spectateur . numérique . télévision . matériel:
+  formule: empreinte * age
+  applicable si: possession = non
+  unité: kgCO2e
+
+spectateur . numérique . télévision . matériel . possession:
+  applicable si: numérique . télévision . nombre > 0
+  question: Si vous ne regardiez pas de sport à la télévision, auriez-vous une télévision ?
+  par défaut: oui
+
+spectateur . numérique . télévision . matériel . age:
+  applicable si: numérique . télévision . nombre > 0
+  question: Quel âge à votre télévision ?
+  par défaut: 2
+  unité: ans
+
+spectateur . numérique . télévision . matériel . empreinte:
+  formule: 10
+  unité: kgCO2e/ans
+
+
+# ----------
+# TABLETTE
+# ----------
+
+spectateur . numérique . tablette:
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+spectateur . numérique . tablette . nombre:
+  question : Tablette
+  par défaut: 10
+  unité: h
+
+spectateur . numérique . tablette . empreinte:
+  formule: 10
+  unité: kgCO2e/h
+
+
+# ----------
+# ORDINATEUR
+# ----------
+
+spectateur . numérique . ordinateur:
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+spectateur . numérique . ordinateur . nombre:
+  question : Ordinateur
+  par défaut: 20
+  unité: h
+
+spectateur . numérique . ordinateur . empreinte:
+  formule: 10
+  unité: kgCO2e/h
+
+# ----------
+# TELEPHONE
+# ----------
+
+spectateur . numérique . téléphone:
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+spectateur . numérique . téléphone . nombre:
+  question : Téléphone
+  par défaut: 100
+  unité: h
+
+spectateur . numérique . téléphone . empreinte:
+  formule: 10
+  unité: kgCO2e/h
+
+
+
+  
+

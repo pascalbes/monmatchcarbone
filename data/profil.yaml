@@ -1,0 +1,68 @@
+profil:
+  couleur: '#91AEC1'
+  icônes: 🍽
+  description: | 
+    Configuration du profil de sportif, déterminant les questions des autres catégories
+  formule:
+    somme:
+      - sport
+
+profil . sport:
+  formule:
+    somme:
+      - basket
+      - foot
+      - volley
+      - hand
+
+profil . sport . basket:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . foot:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . hand:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . volley:
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . basket . présent:
+  question: Basketball
+  par défaut: non
+
+profil . sport . foot . présent:
+  question: Football
+  par défaut: non
+
+profil . sport . hand . présent:
+  question: Handball
+  par défaut: non
+
+profil . sport . volley . présent:
+  question: Volleyball
+  par défaut: non
