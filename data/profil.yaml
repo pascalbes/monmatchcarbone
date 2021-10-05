@@ -48,7 +48,7 @@ profil . sport:
 
 
 profil . sport . sports collectifs . présent:
-  question: Sports collectifs (Football / Handball / Basket / Rugby / Volley ...)
+  question: Sports collectifs (football / handball / basket / rugby / volley ...)
   par défaut: non
 
 profil . sport . sports de raquette . présent:
