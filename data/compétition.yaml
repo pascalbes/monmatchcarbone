@@ -22,7 +22,13 @@ compétition . déplacements:
     somme: 
       - Départementale
       - Régionale
+      - Nationale
+      - Internationale
   unité: kgCO2e
+
+
+
+# DEPARTEMENTALE
 
 compétition . déplacements . Départementale:
   formule: nombre * empreinte
@@ -34,7 +40,7 @@ compétition . déplacements . Départementale . présent:
   par défaut: non
 
 compétition . déplacements . Départementale . nombre:
-  question: A combien de match / tournois en extérieur vous rendez-vous par année dans votre département ?
+  question: 'Echelle Départementale : à combien de match / tournois vous rendez-vous par année ?'
   par défaut: 5
   suggestions:
     aucun: 0
@@ -50,13 +56,38 @@ compétition . déplacements . Départementale . empreinte:
         alors: 500
       - si: moyen transport = 'Moto'
         alors: 200
+      - si: moyen transport = 'Bus'
+        alors: 50
+      - si: moyen transport = 'Train'
+        alors: 30
+      - si: moyen transport = 'Vélo ou à pied'
+        alors: 10
+
+compétition . déplacements . Départementale . moyen transport . Voiture:
+  titre: Voiture 🚗
+compétition . déplacements . Départementale . moyen transport . Moto:
+  titre: Moto 🏍
+compétition . déplacements . Départementale . moyen transport . Bus:
+  titre: Bus 🚌
+compétition . déplacements . Départementale . moyen transport . Train:
+  titre: Train 🚊
+compétition . déplacements . Départementale . moyen transport . Vélo ou à pied:
+  titre: Vélo ou à pied 🚴 🛴 👟 
+
 
 compétition . déplacements . Départementale . moyen transport:
-  question: Quel moyen de transport utilisez-vous en général pour vos déplacements à l'échelle départementale ?
+  question: 'Echelle Départementale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
   une possibilité: 
+    choix obligatoire: oui
     possibilités: 
       - Voiture
       - Moto
+      - Bus
+      - Train
+      - Vélo ou à pied
+
+
+# REGIONALE
 
 compétition . déplacements . Régionale:
   formule: nombre * empreinte
@@ -75,9 +106,15 @@ compétition . déplacements . Régionale . empreinte:
         alors: 500
       - si: moyen transport = 'Moto'
         alors: 200
+      - si: moyen transport = 'Bus'
+        alors: 50
+      - si: moyen transport = 'Train'
+        alors: 30
+      - si: moyen transport = 'Vélo ou à pied'
+        alors: 10
 
 compétition . déplacements . Régionale . nombre:
-  question: A combien de match / tournois en extérieur vous rendez-vous par année dans votre région ?
+  question: 'Echelle Régionale : à combien de match / tournois vous rendez-vous par année ?'
   par défaut: 5
   suggestions:
     zéro: 0
@@ -86,13 +123,170 @@ compétition . déplacements . Régionale . nombre:
   unité: déplacements
 
 compétition . déplacements . Régionale . moyen transport:
-  question: Quel moyen de transport utilisez-vous en général (région) ?
+  question: 'Echelle Régionale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
   une possibilité: 
+    choix obligatoire: oui
     possibilités: 
       - Voiture
       - Moto
+      - Bus
+      - Train
+      - Vélo ou à pied
 
-compétition . déplacements . Départementale . moyen transport . Voiture:
-compétition . déplacements . Départementale . moyen transport . Moto:
 compétition . déplacements . Régionale . moyen transport . Voiture:
+  titre: Voiture 🚗
 compétition . déplacements . Régionale . moyen transport . Moto:
+  titre: Moto 🏍
+compétition . déplacements . Régionale . moyen transport . Bus:
+  titre: Bus 🚌
+compétition . déplacements . Régionale . moyen transport . Train:
+  titre: Train 🚊
+compétition . déplacements . Régionale . moyen transport . Vélo ou à pied:
+  titre: Vélo ou à pied 🚴 🛴 👟 
+
+
+
+# NATIONALE
+
+compétition . déplacements . Nationale:
+  formule: nombre * empreinte
+  applicable si: présent
+  unité: kgCO2e
+
+compétition . déplacements . Nationale . présent: 
+  question: Nationale ?
+  par défaut: non
+
+compétition . déplacements . Nationale . empreinte:
+  unité: kgCO2e/déplacements
+  formule: 
+    variations: 
+      - si: moyen transport = 'Avion'
+        alors: 1500
+      - si: moyen transport = 'Voiture'
+        alors: 500
+      - si: moyen transport = 'Moto'
+        alors: 200
+      - si: moyen transport = 'Bus'
+        alors: 50
+      - si: moyen transport = 'Train'
+        alors: 30
+      - si: moyen transport = 'Vélo ou à pied'
+        alors: 10
+
+compétition . déplacements . Nationale . nombre:
+  question: 'Echelle Nationale : à combien de match / tournois vous rendez-vous par année ?'
+  par défaut: 5
+  suggestions:
+    zéro: 0
+    1 fois / mois: 12
+    toutes les semaines: 52
+  unité: déplacements
+
+compétition . déplacements . Nationale . moyen transport:
+  question: 'Echelle Nationale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
+  une possibilité: 
+    choix obligatoire: oui
+    possibilités: 
+      - Avion
+      - Voiture
+      - Moto
+      - Bus
+      - Train
+      - Vélo ou à pied
+
+compétition . déplacements . Nationale . moyen transport . Avion:
+  titre: Avion ✈️
+compétition . déplacements . Nationale . moyen transport . Voiture:
+  titre: Voiture 🚗
+compétition . déplacements . Nationale . moyen transport . Moto:
+  titre: Moto 🏍
+compétition . déplacements . Nationale . moyen transport . Bus:
+  titre: Bus 🚌
+compétition . déplacements . Nationale . moyen transport . Train:
+  titre: Train 🚊
+compétition . déplacements . Nationale . moyen transport . Vélo ou à pied:
+  titre: Vélo ou à pied 🚴 🛴 👟 
+
+
+
+
+# INTERNATIONALE
+
+compétition . déplacements . Internationale:
+  formule:
+    somme:
+      - Avion 
+      - Voiture
+      - Bus
+      - Train
+  applicable si: présent
+  unité: kgCO2e
+
+compétition . déplacements . Internationale . présent: 
+  question: Internationale ?
+  par défaut: non
+
+compétition . déplacements . Internationale . Avion:
+  icônes: ✈️
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+compétition . déplacements . Internationale . Avion . nombre:
+  question: En avion
+  par défaut: 0
+  unité: h
+
+compétition . déplacements . Internationale . Avion . empreinte:
+  formule: 200
+  unité: kgCO2e/h
+
+compétition . déplacements . Internationale . Voiture:
+  icônes: 🚗
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+compétition . déplacements . Internationale . Voiture . nombre:
+  question: En voiture
+  par défaut: 0
+  unité: h
+
+compétition . déplacements . Internationale . Voiture . empreinte:
+  formule: 100
+  unité: kgCO2e/h
+
+compétition . déplacements . Internationale . Bus:
+  icônes: 🚌
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+compétition . déplacements . Internationale . Bus . nombre:
+  question: En bus
+  par défaut: 0
+  unité: h
+
+compétition . déplacements . Internationale . Bus . empreinte:
+  formule: 100
+  unité: kgCO2e/h
+
+compétition . déplacements . Internationale . Train:
+  icônes: 🚊
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+compétition . déplacements . Internationale . Train . nombre:
+  question: En train
+  par défaut: 0
+  unité: h
+
+compétition . déplacements . Internationale . Train . empreinte:
+  formule: 100
+  unité: kgCO2e/h
+
+
+# compétition . déplacements . Nationale . moyen transport . Avion:
+# compétition . déplacements . Nationale . moyen transport . Voiture:
+# compétition . déplacements . Nationale . moyen transport . Moto:
+# compétition . déplacements . Nationale . moyen transport . Bus:
+# compétition . déplacements . Nationale . moyen transport . Train:
+# compétition . déplacements . Nationale . moyen transport . Vélo ou à pied:

@@ -5,55 +5,70 @@ equipements:
     Equipements
   formule:
     somme:
-      - matériel
+      # - matériel
       - textile
+      - divers
   unité: kgCO2e
   applicable si: profil . sport > 0
+
+
+# -------
+# DIVERS
+# ------
+
+equipements . divers:
+  formule:
+    somme:
+      - sports collectifs
+
+equipements . divers . sports collectifs:
+  applicable si: profil . sport . sports collectifs . pratique = 'en club'
+  formule: 25
 
 # -------
 # MATERIEL
 # ------
 
-equipements . matériel:
-  formule:
-    somme:
-      - Ballons de foot ou basket
-      - Ballons de volley ou handball
-  unité: kgCO2e
+# equipements . matériel:
+#   formule:
+#     somme:
+#       - Ballons de foot ou basket
+#       - Ballons de volley ou handball
+#   unité: kgCO2e
 
-equipements . matériel . Ballons de foot ou basket:
-  applicable si:
-    une de ces conditions: 
-      - profil . sport . foot . présent
-      - profil . sport . basket . présent
-  formule: nombre * empreinte
-  unité: kgCO2e
+# equipements . matériel . Ballons de foot ou basket:
+#   applicable si:
+#     une de ces conditions: 
+#       - profil . sport . foot . présent
+#       - profil . sport . basket . présent
+#   formule: nombre * empreinte
+#   unité: kgCO2e
 
-equipements . matériel . Ballons de foot ou basket . nombre:
-  question: Nombre de ballons de foot ⚽️ ou basket 🏀 ?
-  par défaut: 1
-  unité: ballons
+# equipements . matériel . Ballons de foot ou basket . nombre:
+#   question: Nombre de ballons de foot ⚽️ ou basket 🏀 ?
+#   par défaut: 1
+#   unité: ballons
 
-equipements . matériel . Ballons de foot ou basket . empreinte:
-  valeur: 20
-  unité: kgCO2e/ballons
+# equipements . matériel . Ballons de foot ou basket . empreinte:
+#   valeur: 20
+#   unité: kgCO2e/ballons
 
-equipements . matériel . Ballons de volley ou handball:
-  applicable si:
-    une de ces conditions: 
-      - profil . sport . volley . présent
-      - profil . sport . hand . présent
-  formule: nombre * empreinte
-  unité: kgCO2e
+# equipements . matériel . Ballons de volley ou handball:
+#   applicable si:
+#     une de ces conditions: 
+#       - profil . sport . volley . présent
+#       - profil . sport . hand . présent
+#   formule: nombre * empreinte
+#   unité: kgCO2e
 
-equipements . matériel . Ballons de volley ou handball . nombre:
-  question: Nombre de ballons de volley 🏐 ou handball 🤾‍♀️ ?
-  par défaut: 1
-  unité: ballons
+# equipements . matériel . Ballons de volley ou handball . nombre:
+#   question: Nombre de ballons de volley 🏐 ou handball 🤾‍♀️ ?
+#   par défaut: 1
+#   unité: ballons
 
-equipements . matériel . Ballons de volley ou handball . empreinte:
-  valeur: 20
-  unité: kgCO2e/ballons
+# equipements . matériel . Ballons de volley ou handball . empreinte:
+#   valeur: 20
+#   unité: kgCO2e/ballons
 
 # -------
 # TEXTILE

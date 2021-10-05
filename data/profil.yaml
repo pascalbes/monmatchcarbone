@@ -10,13 +10,113 @@ profil:
 profil . sport:
   formule:
     somme:
-      - basket
-      - foot
-      - volley
-      - hand
+      - sports collectifs
+      - sports de raquette
+      - sports de combat
+      - sports aquatiques
+      - sports hiver
+      - sports motorisés
+      - sports suivants1
+      - sports suivants2
+      - natation bassin
+      - sport sous marin
+      - sport de glace
+      - equitation
+      - golf
+      - tir
+      - cycliste
+      - escrime
 
-profil . sport . basket:
-  icônes: 🏀
+
+# [Occasionnellement / Régulièrement / En club]
+
+# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
+# Pratiquez-vous un ou des  [Occasionnellement / Régulièrement / En club]
+# Pratiquez-vous un ou des  [Occasionnellement / Régulièrement / En club]
+# Pratiquez-vous  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous un  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous  [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous un  [Occasionnellement / Régulièrement / En club]
+# Pratiquez-vous un sport cycliste [Occasionnellement / Régulièrement / En club]
+# Pratiquez vous de l’escrime [Occasionnellement / Régulièrement / En club]
+
+
+
+profil . sport . sports collectifs . présent:
+  question: Sports collectifs (Football / Handball / Basket / Rugby / Volley ...)
+  par défaut: non
+
+profil . sport . sports de raquette . présent:
+  question: Sports de raquette (Tennis / Badminton / Tennis de table ...)
+  par défaut: non
+
+profil . sport . sports de combat . présent:
+  question: Sports de combat et arts martiaux (Judo / Karaté / Lutte / Boxe ...)
+  par défaut: non
+
+profil . sport . sports aquatiques . présent:
+  question: sports aquatiques (Aviron / Canoe Kayak / Voile ...)
+  par défaut: non
+
+profil . sport . sports hiver . présent:
+  question: Sports d’hiver ou de montagne (Ski / snowbord / Alpinisme ...)
+  par défaut: non
+
+profil . sport . sports motorisés . présent:
+  question: Sports motorisés (kart / jetski / aviation / saut en parachute ...)
+  par défaut: non
+
+profil . sport . sports suivants1 . présent:
+  question: sports suivants (Pétanque / Athlétisme / Course à pied / Randonnée ...)
+  par défaut: non
+
+profil . sport . sports suivants2 . présent:
+  question: Sports suivants2 (Fitness / Escalade en salle/ Gymnastique / Danse ...)
+  par défaut: non
+
+profil . sport . natation bassin . présent:
+  question: Natation en bassin
+  par défaut: non
+
+profil . sport . sport sous marin . présent:
+  question: Un sport sous marin
+  par défaut: non
+
+profil . sport . sport de glace . présent:
+  question: Un sport de glace
+  par défaut: non
+
+profil . sport . equitation . présent:
+  question: L’équitation
+  par défaut: non
+
+profil . sport . golf . présent:
+  question: Le golf
+  par défaut: non
+
+profil . sport . tir . présent:
+  question: Un sport de tir
+  par défaut: non
+
+profil . sport . cycliste . présent:
+  question: Un sport cycliste
+  par défaut: non
+
+profil . sport . escrime . présent:
+  question: L’escrime
+  par défaut: non
+
+
+
+
+
+profil . sport . sports collectifs:
+  icônes: 🏀⚽️🤾‍♀️🏐
   unité: kgCO2e
   formule:
     variations: 
@@ -25,8 +125,25 @@ profil . sport . basket:
           valeur: 1
       - sinon: 0
 
-profil . sport . foot:
-  icônes: ⚽️
+profil . sport . sports collectifs . pratique:
+  applicable si: profil . sport . sports collectifs . présent
+  question: quel est votre degré de pratique en sports collectif 🏀⚽️🤾‍♀️🏐 ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports collectifs . pratique . occasionnellement:
+profil . sport . sports collectifs . pratique . régulièrement:
+profil . sport . sports collectifs . pratique . en club:
+
+
+profil . sport . sports aquatiques:
+  icônes: 
   unité: kgCO2e
   formule:
     variations: 
@@ -35,8 +152,25 @@ profil . sport . foot:
           valeur: 1
       - sinon: 0
 
-profil . sport . hand:
-  icônes: 🤾‍♀️
+profil . sport . sports aquatiques . pratique:
+  applicable si: profil . sport . sports aquatiques . présent
+  question: quel est votre degré de pratique en sports aquatiques ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports aquatiques . pratique . occasionnellement:
+profil . sport . sports aquatiques . pratique . régulièrement:
+profil . sport . sports aquatiques . pratique . en club:
+
+
+profil . sport . sports de raquette:
+  icônes: 
   unité: kgCO2e
   formule:
     variations: 
@@ -45,8 +179,25 @@ profil . sport . hand:
           valeur: 1
       - sinon: 0
 
-profil . sport . volley:
-  icônes: 🏐
+profil . sport . sports de raquette . pratique:
+  applicable si: profil . sport . sports de raquette . présent
+  question: quel est votre degré de pratique en sports de raquette ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports de raquette . pratique . occasionnellement:
+profil . sport . sports de raquette . pratique . régulièrement:
+profil . sport . sports de raquette . pratique . en club:
+
+
+profil . sport . sports de combat:
+  icônes: 
   unité: kgCO2e
   formule:
     variations: 
@@ -55,18 +206,357 @@ profil . sport . volley:
           valeur: 1
       - sinon: 0
 
-profil . sport . basket . présent:
-  question: Basketball
-  par défaut: non
+profil . sport . sports de combat . pratique:
+  applicable si: profil . sport . sports de combat . présent
+  question: quel est votre degré de pratique en sports de combat ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
 
-profil . sport . foot . présent:
-  question: Football
-  par défaut: non
+profil . sport . sports de combat . pratique . occasionnellement:
+profil . sport . sports de combat . pratique . régulièrement:
+profil . sport . sports de combat . pratique . en club:
 
-profil . sport . hand . présent:
-  question: Handball
-  par défaut: non
 
-profil . sport . volley . présent:
-  question: Volleyball
-  par défaut: non
+profil . sport . sports hiver:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . sports hiver . pratique:
+  applicable si: profil . sport . sports hiver . présent
+  question: quel est votre degré de pratique en sports d'hiver ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports hiver . pratique . occasionnellement:
+profil . sport . sports hiver . pratique . régulièrement:
+profil . sport . sports hiver . pratique . en club:
+
+
+profil . sport . sports motorisés:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . sports motorisés . pratique:
+  applicable si: profil . sport . sports motorisés . présent
+  question: quel est votre degré de pratique en sports motorisés ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports motorisés . pratique . occasionnellement:
+profil . sport . sports motorisés . pratique . régulièrement:
+profil . sport . sports motorisés . pratique . en club:
+
+
+profil . sport . sports suivants1:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . sports suivants1 . pratique:
+  applicable si: profil . sport . sports suivants1 . présent
+  question: 'quel est votre degré de pratique en sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports suivants1 . pratique . occasionnellement:
+profil . sport . sports suivants1 . pratique . régulièrement:
+profil . sport . sports suivants1 . pratique . en club:
+
+
+
+profil . sport . sports suivants2:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . sports suivants2 . pratique:
+  applicable si: profil . sport . sports suivants2 . présent
+  question: 'quel est votre degré de pratique en sports suivants2 : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
+  par défaut : "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sports suivants2 . pratique . occasionnellement:
+profil . sport . sports suivants2 . pratique . régulièrement:
+profil . sport . sports suivants2 . pratique . en club:
+
+
+
+
+profil . sport . natation bassin:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . natation bassin . pratique:
+  applicable si: profil . sport . natation bassin . présent
+  question: quel est votre degré de pratique en natation bassin ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . natation bassin . pratique . occasionnellement:
+profil . sport . natation bassin . pratique . régulièrement:
+profil . sport . natation bassin . pratique . en club:
+
+
+
+
+profil . sport . sport sous marin:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . sport sous marin . pratique:
+  applicable si: profil . sport . sport sous marin . présent
+  question: quel est votre degré de pratique en sport sous marin ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sport sous marin . pratique . occasionnellement:
+profil . sport . sport sous marin . pratique . régulièrement:
+profil . sport . sport sous marin . pratique . en club:
+
+
+
+
+profil . sport . sport de glace:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . sport de glace . pratique:
+  applicable si: profil . sport . sport de glace . présent
+  question: quel est votre degré de pratique en sport de glace ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . sport de glace . pratique . occasionnellement:
+profil . sport . sport de glace . pratique . régulièrement:
+profil . sport . sport de glace . pratique . en club:
+
+
+
+profil . sport . equitation:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . equitation . pratique:
+  applicable si: profil . sport . equitation . présent
+  question: quel est votre degré de pratique en equitation ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . equitation . pratique . occasionnellement:
+profil . sport . equitation . pratique . régulièrement:
+profil . sport . equitation . pratique . en club:
+
+
+
+
+profil . sport . golf:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . golf . pratique:
+  applicable si: profil . sport . golf . présent
+  question: quel est votre degré de pratique en golf ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . golf . pratique . occasionnellement:
+profil . sport . golf . pratique . régulièrement:
+profil . sport . golf . pratique . en club:
+
+
+
+profil . sport . tir:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . tir . pratique:
+  applicable si: profil . sport . tir . présent
+  question: quel est votre degré de pratique en tir ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . tir . pratique . occasionnellement:
+profil . sport . tir . pratique . régulièrement:
+profil . sport . tir . pratique . en club:
+
+
+
+
+profil . sport . cycliste:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . tir . cycliste:
+  applicable si: profil . sport . cycliste . présent
+  question: quel est votre degré de pratique en cyclisme ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . tir . cycliste . occasionnellement:
+profil . sport . tir . cycliste . régulièrement:
+profil . sport . tir . cycliste . en club:
+
+
+
+
+profil . sport . escrime:
+  icônes: 
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: présent
+        alors:
+          valeur: 1
+      - sinon: 0
+
+profil . sport . escrime . pratique:
+  applicable si: profil . sport . escrime . présent
+  question: quel est votre degré de pratique en escrime ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+profil . sport . escrime . pratique . occasionnellement:
+profil . sport . escrime . pratique . régulièrement:
+profil . sport . escrime . pratique . en club:
