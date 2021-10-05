@@ -5,6 +5,7 @@ spectateur:
     La catégorie "spectateur" intègre l'impact du numérique et des déplacements pour assister à des événements sportifs
   formule: 
     somme:
+     - suivi
      - numérique
     #  - déplacements
   applicable si: présent
@@ -15,6 +16,33 @@ spectateur . présent:
   question: Êtes-vous également spectateur, virtuel ou réel, d'événements sportifs ?
   par défaut: oui
 
+# ----------
+# SUIVI
+# ----------
+
+spectateur . suivi:
+  formule:
+    variations: 
+      - si: type = 'assidument'
+        alors: 100
+      - si: type = 'de temps en temps'
+        alors: 50
+      - si: type = 'jamais'
+        alors: 0
+  unité: kgCO2e
+
+spectateur . suivi . type:
+  question: Suivez-vous l’actualité sportive ?
+  une possibilité:
+    choix obligatoire: oui
+    possibilités:
+      - assidument
+      - de temps en temps
+      - jamais
+
+spectateur . suivi . type . assidument:
+spectateur . suivi . type . de temps en temps:
+spectateur . suivi . type . jamais:
 
 # ----------
 # ----------
