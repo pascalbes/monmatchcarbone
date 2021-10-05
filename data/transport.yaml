@@ -63,19 +63,18 @@ transport . voiture . voyageurs:
 
 transport . voiture . km:
   titre: Km en voiture
-  question: Quelle distance parcourez-vous à l'année en voiture ?
+  question: Quelle distance parcourez-vous par mois en voiture ?
   description: |
     Ne comptez que les kilomètres de déplacement personnel (courses, loisirs, famille etc.) et de déplacement domicile travail pour rejoindre votre lieu de travail habituel.
 
     Par exemple, si vous êtes en mission professionnelle dans un autre département ou un autre pays cela rentre dans la comptabilité de votre entreprise : ne le comptez pas ici.
 
-  par défaut: 11000 km/an
+  par défaut: 100 km/mois
   suggestions: 
-    zéro: 0 km/an
-    vacances: 2000 km/an
-    10km / jour: 3600 km/an
-    20km / jour: 7000 km/an
-    1000km / mois: 12000 km/an 
+    zéro: 0 km/mois
+    vacances: 200 km/mois
+    10km / jour: 300 km/mois
+    20km / jour: 600 km/mois
 
 
 transport . voiture . motorisation: 
@@ -174,7 +173,7 @@ transport . voiture . électrique . empreinte au kilomètre:
 
 
 transport . voiture . impact usage:
-  formule: km * empreinte au kilomètre
+  formule: km * empreinte au kilomètre * nombre de mois
   unité: kgCO2e
 
 transport . voiture . empreinte par km personne:
@@ -387,6 +386,162 @@ transport . voiture . propriétaire:
 #   description: | 
 #     Vous n'êtes pas propriétaire d'une voiture, mais vous faites quand même des km : les questions suivantes concernont donc les voitures que vous empruntez en tant que passager ou conducteur (voiture de location, voiture d'amis).
 
+# BUS
+
+transport . bus:
+  icônes: 🚌
+  description: |
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alliance_Auch_ligne_6_Allées_Baylac.JPG/640px-Alliance_Auch_ligne_6_Allées_Baylac.JPG)
+  formule: heures par mois * impact par heure * nombre de mois
+  applicable si: présent
+
+transport . bus . présent:
+  question: Bus ?
+  par défaut: non
+
+nombre de mois: 
+  formule: 12
+  unité: mois
+
+nombre de semaines: 
+  formule: 52
+  unité: semaine
+
+transport . bus . impact par heure:
+  formule: 1.99
+  unité: kgCO2e/heure
+  description: | 
+    Sur la base de 166 gCO2e/(passager.km) et de 12 km/h de vitesse moyenne - Base Carbone consultée le 22/06/19 - Bus, moyen, réseaux urbains Classe 2 (zone urbaine et interurbaine) - amont et combustion ; Mairie de Paris pour la vitesse des bus, consulté le 05/09/2014
+  références: 
+    - http://www.paris.fr/pratique/deplacements-voirie/transports-en-commun/promouvoir-les-transports-collectifs/rub_385_stand_10755_port_1208
+    - http://www.bilans-ges.ademe.fr/
+
+transport . bus . heures par mois:
+  question: Combien d'heures passez-vous dans un bus 🚌 par mois ?
+  suggestions: 
+    zéro: 0
+    1h / jour: 30
+    2h / jour: 60
+  unité: heures/mois
+  par défaut: 3 heures/mois
+
+
+
+# 2 ROUES
+
+transport . deux roues thermique: 
+  icônes: 🛵
+  applicable si: présent
+  formule: empreinte * km * nombre de mois
+
+transport . deux roues thermique . présent:
+  question: Scooter ou moto ?
+  description: |
+    Les scooters et motos sont aujourd'hui très majoritairement des engins qui fonctionnent au pétrole. Les équivalents électriques ont fait leur apparition, mais timidement.
+  par défaut: non
+
+transport . deux roues thermique . km: 
+  question: Combien de km faites-vous par mois avec votre scooter ou moto ? 
+  par défaut: 1000 km/mois
+  unité: km/mois
+
+transport . deux roues thermique . type: 
+  question: Quel type de deux roues thermique utilisez-vous ? 
+  par défaut: "'scooter'"
+  formule: 
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - scooter
+        - moto inf 250
+        - moto sup 250
+
+transport . deux roues thermique . type . scooter:
+  titre: Scooter
+transport . deux roues thermique . type . moto inf 250:
+  titre: Moto moins de 250 cm3
+transport . deux roues thermique . type . moto sup 250:
+  titre: Moto plus de 250 cm3  
+
+transport . deux roues thermique . empreinte: 
+  formule: 
+    variations:
+      - si: type = 'scooter'
+        alors: 0.0644 kgCO2e/km
+      - si: type = 'moto inf 250'
+        alors: 0.0616 kgCO2e/km
+      - si: type = 'moto sup 250'
+        alors: 0.168 kgCO2e/km
+
+  note: |
+    Scooter ; 64.4 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+    
+    Deux roues thermiques < 250cm3 ; 61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+
+    Deux roues thermiques > 250cm3 ; 168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
+
+
+    Nous ne prenons en compte que l'empreinte à l'usage, pas la construction, faute de données.
+
+    Notons cependant que si l'on estime la fabrication à une tonne de CO2e, un véhicule qui ferait 100 000 km émetterait ~ 10 tonnes de CO2e, soit 10x l'empreinte de construction.
+
+
+  références: 
+    documentation bilan-GES: https://www.bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?routier2.htm
+
+
+
+
+
+
+
+# VELO
+
+transport . vélo:
+  icônes: 🚲
+  formule: empreinte * km
+
+transport . vélo . empreinte:
+  formule: 0
+  unité: kgCO2e/km 
+  description: |
+    Le vélo est un mode de transport super sobre : on utilise 15 kilos de matériel pour déplacer un corps de ~70 kilos.
+
+    En pleine explosion, le vélo à assistance électrique permet de se mettre au vélo régulier en augmentant très peu l'empreinte de ce moyen de transport.
+
+    Idem pour tous les véhicules de moins de 50 kilos. 
+
+    > Astuce : vos chaussures sont un véhicule de moins de 50kg.
+
+  note: |
+    Nous considérons que le vélo a une empreinte nulle. 
+
+    Il est toujours possible de lui attribuer une empreinte de construction facilement amortie, et l'empreinte du surplus de calories, qui dépend du régime alimentaire. 
+
+    Nous avons tous les ingrédients ici pour le faire, mais c'est loin d'être aussi simple. Le surplus d'activité physique est aussi associé à des risques et donc des dépenses de santé bien moindres.
+transport . vélo . km:
+  titre: Kilomètres à vélo
+  question: Combien de kilomètres de vélo ou marche faites-vous par semaine ?
+  description: |
+    🚴 🛴 👟 
+
+    Renseignez ici les km à vélo classique, à vélo à assistance électrique, en trottinette et autre véhicule sobre.
+
+    > Un véhicule sobre est léger (moins de 30 kilos par exemple) et à vitesse réduite (moins de 25km/h, ce qui permet d'emprunter les pistes cyclables). 
+
+    Mais ne vous inquiétez pas trop de la précision : l'empreinte de ces modes sobres est ici considérée comme nulle, votre réponse n'aura donc aucune conséquence 😄.
+
+    > Note : 🛗 l'ascenseur est le transport en commun électrique le plus oublié ! Il n'a pas plus d'empreinte en ordre de grandeur que le vélo électrique.
+  suggestions: 
+    zéro ou presque: 0 km
+    5km par jour: 35 km
+    10km par jour: 70 km
+  par défaut: 5 km
+  note: Le chiffre par défaut est une grossière estimation sans source, mais peu importe vu l'impact final nul.
+
+
+
+  
 
 transport . avion:
   icônes: ✈️
@@ -580,139 +735,3 @@ transport . métro ou tram . heures par semaine:
     2h / jour: 14
   unité: heures/semaine
   par défaut: 3 heures/semaine
-
-transport . bus:
-  icônes: 🚌
-  description: |
-    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alliance_Auch_ligne_6_Allées_Baylac.JPG/640px-Alliance_Auch_ligne_6_Allées_Baylac.JPG)
-  formule: heures par semaine * impact par heure * nombre de semaines
-  applicable si: présent
-
-transport . bus . présent:
-  question: Bus ?
-  par défaut: non
-
-nombre de semaines: 
-  formule: 52
-  unité: semaine
-
-transport . bus . impact par heure:
-  formule: 1.99
-  unité: kgCO2e/heure
-  description: | 
-    Sur la base de 166 gCO2e/(passager.km) et de 12 km/h de vitesse moyenne - Base Carbone consultée le 22/06/19 - Bus, moyen, réseaux urbains Classe 2 (zone urbaine et interurbaine) - amont et combustion ; Mairie de Paris pour la vitesse des bus, consulté le 05/09/2014
-  références: 
-    - http://www.paris.fr/pratique/deplacements-voirie/transports-en-commun/promouvoir-les-transports-collectifs/rub_385_stand_10755_port_1208
-    - http://www.bilans-ges.ademe.fr/
-
-transport . bus . heures par semaine:
-  question: Combien d'heures passez-vous dans un bus 🚌 par semaine ?
-  suggestions: 
-    zéro: 0
-    1h / jour: 7
-    2h / jour: 14
-  unité: heures/semaine
-  par défaut: 3 heures/semaine
-
-transport . vélo:
-  icônes: 🚲
-  formule: empreinte * km
-
-transport . vélo . empreinte:
-  formule: 0
-  unité: kgCO2e/km 
-  description: |
-    Le vélo est un mode de transport super sobre : on utilise 15 kilos de matériel pour déplacer un corps de ~70 kilos.
-
-    En pleine explosion, le vélo à assistance électrique permet de se mettre au vélo régulier en augmentant très peu l'empreinte de ce moyen de transport.
-
-    Idem pour tous les véhicules de moins de 50 kilos. 
-
-    > Astuce : vos chaussures sont un véhicule de moins de 50kg.
-
-  note: |
-    Nous considérons que le vélo a une empreinte nulle. 
-
-    Il est toujours possible de lui attribuer une empreinte de construction facilement amortie, et l'empreinte du surplus de calories, qui dépend du régime alimentaire. 
-
-    Nous avons tous les ingrédients ici pour le faire, mais c'est loin d'être aussi simple. Le surplus d'activité physique est aussi associé à des risques et donc des dépenses de santé bien moindres.
-transport . vélo . km:
-  titre: Kilomètres à vélo
-  question: Combien de kilomètres de vélo ou marche faites-vous par semaine ?
-  description: |
-    🚴 🛴 👟 
-
-    Renseignez ici les km à vélo classique, à vélo à assistance électrique, en trottinette et autre véhicule sobre.
-
-    > Un véhicule sobre est léger (moins de 30 kilos par exemple) et à vitesse réduite (moins de 25km/h, ce qui permet d'emprunter les pistes cyclables). 
-
-    Mais ne vous inquiétez pas trop de la précision : l'empreinte de ces modes sobres est ici considérée comme nulle, votre réponse n'aura donc aucune conséquence 😄.
-
-    > Note : 🛗 l'ascenseur est le transport en commun électrique le plus oublié ! Il n'a pas plus d'empreinte en ordre de grandeur que le vélo électrique.
-  suggestions: 
-    zéro ou presque: 0 km
-    5km par jour: 35 km
-    10km par jour: 70 km
-  par défaut: 5 km
-  note: Le chiffre par défaut est une grossière estimation sans source, mais peu importe vu l'impact final nul.
-
-
-
-transport . deux roues thermique: 
-  icônes: 🛵
-  applicable si: présent
-  formule: empreinte * km
-
-transport . deux roues thermique . présent:
-  question: Scooter ou moto ?
-  description: |
-    Les scooters et motos sont aujourd'hui très majoritairement des engins qui fonctionnent au pétrole. Les équivalents électriques ont fait leur apparition, mais timidement.
-  par défaut: non
-
-transport . deux roues thermique . km: 
-  question: Combien de km faites-vous à l'année avec votre scooter ou moto ? 
-  par défaut: 1000 km
-
-transport . deux roues thermique . type: 
-  question: Quel type de deux roues thermique utilisez-vous ? 
-  par défaut: "'scooter'"
-  formule: 
-    une possibilité: 
-      choix obligatoire: oui
-      possibilités: 
-        - scooter
-        - moto inf 250
-        - moto sup 250
-
-transport . deux roues thermique . type . scooter:
-  titre: Scooter
-transport . deux roues thermique . type . moto inf 250:
-  titre: Moto moins de 250 cm3
-transport . deux roues thermique . type . moto sup 250:
-  titre: Moto plus de 250 cm3  
-
-transport . deux roues thermique . empreinte: 
-  formule: 
-    variations:
-      - si: type = 'scooter'
-        alors: 0.0644 kgCO2e/km
-      - si: type = 'moto inf 250'
-        alors: 0.0616 kgCO2e/km
-      - si: type = 'moto sup 250'
-        alors: 0.168 kgCO2e/km
-
-  note: |
-    Scooter ; 64.4 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
-    
-    Deux roues thermiques < 250cm3 ; 61,6 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
-
-    Deux roues thermiques > 250cm3 ; 168 gCO2e/km/personne ; calculs ADEME à partir d'HBEFA (2020)
-
-
-    Nous ne prenons en compte que l'empreinte à l'usage, pas la construction, faute de données.
-
-    Notons cependant que si l'on estime la fabrication à une tonne de CO2e, un véhicule qui ferait 100 000 km émetterait ~ 10 tonnes de CO2e, soit 10x l'empreinte de construction.
-
-
-  références: 
-    documentation bilan-GES: https://www.bilans-ges.ademe.fr/documentation/UPLOAD_DOC_FR/index.htm?routier2.htm

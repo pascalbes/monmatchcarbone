@@ -271,7 +271,7 @@ transport . voiture 5km:
   # 177 millions de trajets de moins de 5km = consolidation depuis Enquête Nationale Transport et Déplacements (ENTD), MTES, 2008.
 
 transport . voiture 5km . distance totale:
-  formule:  fréquence * distance moyenne . aller-retour * nombre de semaines
+  formule:  fréquence * distance moyenne . aller-retour * nombre de mois
 
   
 transport . voiture 5km . distance moyenne . aller-retour:
