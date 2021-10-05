@@ -76,7 +76,7 @@ profil . sport . sports suivants1 . présent:
   par défaut: non
 
 profil . sport . sports suivants2 . présent:
-  question: Sports suivants2 (Fitness / Escalade en salle/ Gymnastique / Danse ...)
+  question: Sports suivants2 (Fitness / Escalade en salle / Gymnastique / Danse ...)
   par défaut: non
 
 profil . sport . natation bassin . présent:
@@ -143,7 +143,7 @@ profil . sport . sports collectifs . pratique . en club:
 
 
 profil . sport . sports aquatiques:
-  icônes: 
+  icônes: 🚣🏻 🏄🏻
   unité: kgCO2e
   formule:
     variations: 
@@ -154,7 +154,7 @@ profil . sport . sports aquatiques:
 
 profil . sport . sports aquatiques . pratique:
   applicable si: profil . sport . sports aquatiques . présent
-  question: quel est votre degré de pratique en sports aquatiques ?
+  question: Quel est votre degré de pratique en sports aquatiques ?
   par défaut: "'occasionnellement'"
   formule:
     une possibilité: 
@@ -170,7 +170,7 @@ profil . sport . sports aquatiques . pratique . en club:
 
 
 profil . sport . sports de raquette:
-  icônes: 
+  icônes: 🎾 🥎 🏓 🏸
   unité: kgCO2e
   formule:
     variations: 
@@ -197,7 +197,7 @@ profil . sport . sports de raquette . pratique . en club:
 
 
 profil . sport . sports de combat:
-  icônes: 
+  icônes: 🤼‍♂️
   unité: kgCO2e
   formule:
     variations: 
@@ -224,7 +224,7 @@ profil . sport . sports de combat . pratique . en club:
 
 
 profil . sport . sports hiver:
-  icônes: 
+  icônes: ⛷ 🏂
   unité: kgCO2e
   formule:
     variations: 
@@ -251,7 +251,7 @@ profil . sport . sports hiver . pratique . en club:
 
 
 profil . sport . sports motorisés:
-  icônes: 
+  icônes: 🏍
   unité: kgCO2e
   formule:
     variations: 
@@ -278,7 +278,7 @@ profil . sport . sports motorisés . pratique . en club:
 
 
 profil . sport . sports suivants1:
-  icônes: 
+  icônes: 🥾 🚶🏾 🚶🏻‍♀️
   unité: kgCO2e
   formule:
     variations: 
@@ -306,7 +306,7 @@ profil . sport . sports suivants1 . pratique . en club:
 
 
 profil . sport . sports suivants2:
-  icônes: 
+  icônes: 🕺🏽 💃
   unité: kgCO2e
   formule:
     variations: 
@@ -335,7 +335,7 @@ profil . sport . sports suivants2 . pratique . en club:
 
 
 profil . sport . natation bassin:
-  icônes: 
+  icônes: 🏊🏾‍♂️ 🏊🏼‍♀️ 🥽 🩲 
   unité: kgCO2e
   formule:
     variations: 
@@ -364,7 +364,7 @@ profil . sport . natation bassin . pratique . en club:
 
 
 profil . sport . sport sous marin:
-  icônes: 
+  icônes: 🤿
   unité: kgCO2e
   formule:
     variations: 
@@ -393,7 +393,7 @@ profil . sport . sport sous marin . pratique . en club:
 
 
 profil . sport . sport de glace:
-  icônes: 
+  icônes: ⛸️ 🏒
   unité: kgCO2e
   formule:
     variations: 
@@ -421,7 +421,7 @@ profil . sport . sport de glace . pratique . en club:
 
 
 profil . sport . equitation:
-  icônes: 
+  icônes: 🏇
   unité: kgCO2e
   formule:
     variations: 
@@ -450,7 +450,7 @@ profil . sport . equitation . pratique . en club:
 
 
 profil . sport . golf:
-  icônes: 
+  icônes: 🏌️‍♀️ ⛳
   unité: kgCO2e
   formule:
     variations: 
@@ -478,7 +478,7 @@ profil . sport . golf . pratique . en club:
 
 
 profil . sport . tir:
-  icônes: 
+  icônes: 🔫
   unité: kgCO2e
   formule:
     variations: 
@@ -507,7 +507,7 @@ profil . sport . tir . pratique . en club:
 
 
 profil . sport . cycliste:
-  icônes: 
+  icônes: 🚴‍♂️ 🚴‍♀️
   unité: kgCO2e
   formule:
     variations: 
@@ -516,7 +516,7 @@ profil . sport . cycliste:
           valeur: 1
       - sinon: 0
 
-profil . sport . tir . cycliste:
+profil . sport . cycliste . pratique:
   applicable si: profil . sport . cycliste . présent
   question: quel est votre degré de pratique en cyclisme ?
   par défaut: "'occasionnellement'"
@@ -528,15 +528,15 @@ profil . sport . tir . cycliste:
         - régulièrement
         - en club
 
-profil . sport . tir . cycliste . occasionnellement:
-profil . sport . tir . cycliste . régulièrement:
-profil . sport . tir . cycliste . en club:
+profil . sport . cycliste . pratique . occasionnellement:
+profil . sport . cycliste . pratique . régulièrement:
+profil . sport . cycliste . pratique . en club:
 
 
 
 
 profil . sport . escrime:
-  icônes: 
+  icônes: 🤺
   unité: kgCO2e
   formule:
     variations: 
