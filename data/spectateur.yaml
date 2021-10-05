@@ -7,7 +7,7 @@ spectateur:
     somme:
      - suivi
      - numérique
-    #  - déplacements
+     - déplacements
   applicable si: présent
   unité: kgCO2e
 
@@ -163,6 +163,118 @@ spectateur . numérique . téléphone . empreinte:
   unité: kgCO2e/h
 
 
+# ----------
+# ----------
+# ----------
+# DEPLACEMENTS
+# ----------
+# ----------
+# ----------
 
-  
 
+spectateur . déplacements:
+  formule:
+    somme: 
+      - locale
+      - nationale ou internationale
+  unité: kgCO2e
+
+# LOCALE
+
+spectateur . déplacements . locale:
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+spectateur . déplacements . locale . nombre:
+  question: A quelle fréquence assistez-vous en tant que spectateur à un événement sportif d’envergure locale ou régionale ?
+  par défaut: 5
+  suggestions:
+    aucun: 0
+    1 fois / mois: 12
+    toutes les semaines: 52
+  unité: déplacements
+
+spectateur . déplacements . locale . moyen transport:
+  question: 'Echelle locale ou régionale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
+  une possibilité: 
+    choix obligatoire: oui
+    possibilités: 
+      - Voiture
+      - Moto
+      - Bus
+      - Train
+      - Vélo ou à pied
+
+spectateur . déplacements . locale . empreinte:
+  unité: kgCO2e/déplacements
+  formule: 
+    variations: 
+      - si: moyen transport = 'Voiture'
+        alors: 500
+      - si: moyen transport = 'Moto'
+        alors: 200
+      - si: moyen transport = 'Bus'
+        alors: 50
+      - si: moyen transport = 'Train'
+        alors: 30
+      - si: moyen transport = 'Vélo ou à pied'
+        alors: 10
+
+spectateur . déplacements . locale . moyen transport . Voiture:
+  titre: Voiture 🚗
+spectateur . déplacements . locale . moyen transport . Moto:
+  titre: Moto 🏍
+spectateur . déplacements . locale . moyen transport . Bus:
+  titre: Bus 🚌
+spectateur . déplacements . locale . moyen transport . Train:
+  titre: Train 🚊
+spectateur . déplacements . locale . moyen transport . Vélo ou à pied:
+  titre: Vélo ou à pied 🚴 🛴 👟 
+
+
+# NATIONALE OU INTERNATIONALE
+
+spectateur . déplacements . nationale ou internationale:
+  formule: nombre * empreinte
+  unité: kgCO2e
+
+spectateur . déplacements . nationale ou internationale . nombre:
+  question: A quelle fréquence assistez-vous en tant que spectateur à un événement sportif d’envergure nationale ou internationale ?
+  par défaut: 5
+  suggestions:
+    aucun: 0
+    1 fois / mois: 12
+    toutes les semaines: 52
+  unité: déplacements
+
+spectateur . déplacements . nationale ou internationale . moyen transport:
+  question: 'Echelle nationale ou internationale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
+  une possibilité: 
+    choix obligatoire: oui
+    possibilités: 
+      - Voiture
+      - Moto
+      - Bus
+      - Train
+
+spectateur . déplacements . nationale ou internationale . empreinte:
+  unité: kgCO2e/déplacements
+  formule: 
+    variations: 
+      - si: moyen transport = 'Voiture'
+        alors: 500
+      - si: moyen transport = 'Moto'
+        alors: 200
+      - si: moyen transport = 'Bus'
+        alors: 50
+      - si: moyen transport = 'Train'
+        alors: 30
+
+spectateur . déplacements . nationale ou internationale . moyen transport . Voiture:
+  titre: Voiture 🚗
+spectateur . déplacements . nationale ou internationale . moyen transport . Moto:
+  titre: Moto 🏍
+spectateur . déplacements . nationale ou internationale . moyen transport . Bus:
+  titre: Bus 🚌
+spectateur . déplacements . nationale ou internationale . moyen transport . Train:
+  titre: Train 🚊

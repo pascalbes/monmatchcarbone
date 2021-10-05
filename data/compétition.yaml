@@ -282,11 +282,3 @@ compétition . déplacements . Internationale . Train . nombre:
 compétition . déplacements . Internationale . Train . empreinte:
   formule: 100
   unité: kgCO2e/h
-
-
-# compétition . déplacements . Nationale . moyen transport . Avion:
-# compétition . déplacements . Nationale . moyen transport . Voiture:
-# compétition . déplacements . Nationale . moyen transport . Moto:
-# compétition . déplacements . Nationale . moyen transport . Bus:
-# compétition . déplacements . Nationale . moyen transport . Train:
-# compétition . déplacements . Nationale . moyen transport . Vélo ou à pied:
