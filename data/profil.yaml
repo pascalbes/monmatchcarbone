@@ -127,7 +127,7 @@ profil . sport . sports collectifs:
 
 profil . sport . sports collectifs . pratique:
   applicable si: profil . sport . sports collectifs . présent
-  question: quel est votre degré de pratique en sports collectif 🏀⚽️🤾‍♀️🏐 ?
+  question: quel est votre degré de pratique en sports collectifs 🏀⚽️🤾‍♀️🏐 ?
   par défaut: "'occasionnellement'"
   formule:
     une possibilité: 
