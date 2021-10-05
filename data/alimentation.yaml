@@ -16,10 +16,99 @@ alimentation:
       # - déjeuner et dîner
       # - boisson
       # - déchets
+      - surplus
       - compléments
         # à venir peut-être dans une prochaine version
         # - laitages
   applicable si: profil . sport > 0
+
+
+# Végétalien / Végétarien / Omnivore viande 1 / Omnivore viande 2
+
+alimentation . surplus:
+  unité: kgCO2e
+  formule:
+    somme:
+      - végétalien
+      - végétarien
+      - omnivore1
+      - omnivore2
+
+alimentation . surplus . type repas:
+  question: Quel est votre type de régime alimentaire ? 
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - végétalien
+        - végétarien
+        - omnivore1
+        - omnivore2
+
+alimentation . surplus . type repas . végétalien:
+alimentation . surplus . type repas . végétarien:
+alimentation . surplus . type repas . omnivore1:
+  titre: Omnivore (avec poulet)
+alimentation . surplus . type repas . omnivore2:
+  titre: Omnivore (avec boeuf)
+
+alimentation . surplus . calories:
+  question: Par rapport à un être humain de votre taille et de votre genre, combien de Kcal consommez vous en plus au quotidien ?
+  suggestions: 
+    normal: 200
+    légèrement plus: 400
+    beaucoup plus: 600
+    régime de champion: 1500
+  unité: kcal
+  par défaut: 200
+
+alimentation . surplus . végétalien:
+  formule: 
+    variations: 
+      - si: type repas = 'végétalien'
+        alors: surplus . calories * empreinte * 365
+      - sinon: 0
+  unité: kgCO2e
+
+alimentation . surplus . végétalien . empreinte:
+  unité: kgCO2/kcal
+  formule: 0.000507732
+
+alimentation . surplus . végétarien:
+  formule: 
+    variations: 
+      - si: type repas = 'végétarien'
+        alors: surplus . calories * empreinte * 365
+      - sinon: 0
+  unité: kgCO2e
+
+alimentation . surplus . végétarien . empreinte:
+  unité: kgCO2/kcal
+  formule: 0.000657216
+
+alimentation . surplus . omnivore1:
+  formule: 
+    variations: 
+      - si: type repas = 'omnivore1'
+        alors: surplus . calories * empreinte * 365
+      - sinon: 0
+  unité: kgCO2e
+
+alimentation . surplus . omnivore1 . empreinte:
+  unité: kgCO2/kcal
+  formule: 0.001450054
+
+alimentation . surplus . omnivore2:
+  formule: 
+    variations: 
+      - si: type repas = 'omnivore2'
+        alors: surplus . calories * empreinte * 365
+      - sinon: 0
+  unité: kgCO2e
+
+alimentation . surplus . omnivore2 . empreinte:
+  unité: kgCO2/kcal
+  formule: 0.006844396
 
 
 # --------
