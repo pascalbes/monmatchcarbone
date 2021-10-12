@@ -79,7 +79,7 @@ spectateur . numérique . télévision . nombre:
   unité: h
 
 spectateur . numérique . télévision . visionnage:
-  formule: empreinte * spectateur . numérique . télévision . nombre
+  formule: empreinte * spectateur . numérique . télévision . nombre * 52
   applicable si: numérique . télévision . nombre > 0
 
 spectateur . numérique . télévision . visionnage . empreinte:
@@ -113,7 +113,7 @@ spectateur . numérique . télévision . matériel . empreinte:
 
 spectateur . numérique . tablette:
   # icônes: 🖥
-  formule: nombre * empreinte
+  formule: nombre * empreinte * 52
   unité: kgCO2e
 
 spectateur . numérique . tablette . nombre:
@@ -132,7 +132,7 @@ spectateur . numérique . tablette . empreinte:
 
 spectateur . numérique . ordinateur:
   icônes: 💻
-  formule: nombre * empreinte
+  formule: nombre * empreinte * 52
   unité: kgCO2e
 
 spectateur . numérique . ordinateur . nombre:
@@ -150,7 +150,7 @@ spectateur . numérique . ordinateur . empreinte:
 
 spectateur . numérique . téléphone:
   icônes: 📱
-  formule: nombre * empreinte
+  formule: nombre * empreinte * 52
   unité: kgCO2e
 
 spectateur . numérique . téléphone . nombre:
@@ -186,7 +186,7 @@ spectateur . déplacements . locale:
   unité: kgCO2e
 
 spectateur . déplacements . locale . nombre:
-  question: A quelle fréquence assistez-vous en tant que spectateur à un événement sportif d’envergure locale ou régionale ?
+  question: A combien d'événements sportifs d’envergure locale ou régionale assistez-vous sur une année ?
   par défaut: 5
   suggestions:
     aucun: 0
