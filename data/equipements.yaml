@@ -50,7 +50,7 @@ equipements . matériel . Ballons de foot ou basket . nombre:
   unité: ballons
 
 equipements . matériel . Ballons de foot ou basket . empreinte:
-  valeur: 20
+  valeur: 4.4
   unité: kgCO2e/ballons
 
 equipements . matériel . Ballons de volley ou handball:
@@ -64,7 +64,7 @@ equipements . matériel . Ballons de volley ou handball . nombre:
   unité: ballons
 
 equipements . matériel . Ballons de volley ou handball . empreinte:
-  valeur: 20
+  valeur: 2.25
   unité: kgCO2e/ballons
 
 equipements . matériel . balles tennis:
@@ -78,7 +78,7 @@ equipements . matériel . balles tennis . nombre:
   unité: balles
 
 equipements . matériel . balles tennis . empreinte:
-  valeur: 20
+  valeur: 0.2
   unité: kgCO2e/balles
 
 equipements . matériel . balles golf:
@@ -92,7 +92,7 @@ equipements . matériel . balles golf . nombre:
   unité: balles
 
 equipements . matériel . balles golf . empreinte:
-  valeur: 20
+  valeur: 0.3
   unité: kgCO2e/balles
 
 equipements . matériel . cartouches tir:
@@ -106,7 +106,7 @@ equipements . matériel . cartouches tir . nombre:
   unité: cartouches
 
 equipements . matériel . cartouches tir . empreinte:
-  valeur: 20
+  valeur: 0.12
   unité: kgCO2e/cartouches
   
 
@@ -135,7 +135,7 @@ equipements . textile . maillots . nombre:
   par défaut: 0
 
 equipements . textile . maillots . empreinte:
-  formule: 25
+  formule: 5.35
   unité: kgCO2e
 
 equipements . textile . short et cycliste:
@@ -148,7 +148,7 @@ equipements . textile . short et cycliste . nombre:
   par défaut: 0
 
 equipements . textile . short et cycliste . empreinte:
-  formule: 30
+  formule: 6.4
   unité: kgCO2e
 
 equipements . textile . chaussures:
@@ -158,10 +158,10 @@ equipements . textile . chaussures:
 
 equipements . textile . chaussures . nombre:
   question: Paire de chaussures ?
-  par défaut: 0
+  par défaut: 2
 
 equipements . textile . chaussures . empreinte:
-  formule: 25
+  formule: 18.7
   unité: kgCO2e
 
 equipements . textile . survêtements:
@@ -174,7 +174,7 @@ equipements . textile . survêtements . nombre:
   par défaut: 0
 
 equipements . textile . survêtements . empreinte:
-  formule: 25
+  formule: 23.2
   unité: kgCO2e
 
 equipements . textile . chaussettes:
@@ -187,7 +187,7 @@ equipements . textile . chaussettes . nombre:
   par défaut: 0
 
 equipements . textile . chaussettes . empreinte:
-  formule: 25
+  formule: 1.5
   unité: kgCO2e
 
 equipements . textile . manteau:
@@ -200,5 +200,5 @@ equipements . textile . manteau . nombre:
   par défaut: 0
 
 equipements . textile . manteau . empreinte:
-  formule: 25
+  formule: 38.7
   unité: kgCO2e

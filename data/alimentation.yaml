@@ -56,9 +56,9 @@ alimentation . surplus . type repas . carnivore:
 alimentation . surplus . calories:
   question: Par rapport à un être humain de votre taille et de votre genre, combien de Kcal consommez vous en plus au quotidien ?
   suggestions: 
-    normal: 200
-    légèrement plus: 400
-    beaucoup plus: 600
+    normal: 0
+    légèrement plus: 200
+    beaucoup plus: 800
     régime de champion: 1500
   unité: kcal
   par défaut: 200
@@ -73,7 +73,7 @@ alimentation . surplus . végétalien:
 
 alimentation . surplus . végétalien . empreinte:
   unité: kgCO2/kcal
-  formule: 0.000507732
+  formule: 0.98 / 2500
 
 alimentation . surplus . végétarien:
   formule: 
@@ -85,7 +85,7 @@ alimentation . surplus . végétarien:
 
 alimentation . surplus . végétarien . empreinte:
   unité: kgCO2/kcal
-  formule: 0.000657216
+  formule: 1.76 / 2500
 
 alimentation . surplus . flexitarien:
   formule: 
@@ -97,7 +97,7 @@ alimentation . surplus . flexitarien:
 
 alimentation . surplus . flexitarien . empreinte:
   unité: kgCO2/kcal
-  formule: 0.001450054 #TBD
+  formule: 2.86 / 2500
 
 alimentation . surplus . classique:
   formule: 
@@ -109,7 +109,7 @@ alimentation . surplus . classique:
 
 alimentation . surplus . classique . empreinte:
   unité: kgCO2/kcal
-  formule: 0.006844396  #TBD
+  formule: 4.53 / 2500
 
 alimentation . surplus . carnivore:
   formule: 
@@ -121,7 +121,7 @@ alimentation . surplus . carnivore:
 
 alimentation . surplus . carnivore . empreinte:
   unité: kgCO2/kcal
-  formule: 0.006844396  #TBD
+  formule: 8.84 / 2500
 
 
 # --------
@@ -142,7 +142,7 @@ alimentation . compléments . barres:
   unité: kgCO2e
 
 alimentation . compléments . barres . empreinte:
-  formule: 5.35 # 5.35 / (durée * coefficient préservation)
+  formule: 0.473
   unité: kgCO2e
 
 alimentation . compléments . barres . nombre:
@@ -155,7 +155,7 @@ alimentation . compléments . boisson énergétique:
   unité: kgCO2e
 
 alimentation . compléments . boisson énergétique . empreinte:
-  formule: 5.35 # 5.35 / (durée * coefficient préservation)
+  formule: 0.26 * 2
   unité: kgCO2e/L
 
 alimentation . compléments . boisson énergétique . nombre:
@@ -169,7 +169,7 @@ alimentation . compléments . fruits:
   unité: kgCO2e
 
 alimentation . compléments . fruits . empreinte:
-  formule: 10 # TBD
+  formule: 0.17
   unité: kgCO2e
 
 alimentation . compléments . fruits . nombre:
@@ -182,7 +182,7 @@ alimentation . compléments . sodas:
   unité: kgCO2e
 
 alimentation . compléments . sodas . empreinte:
-  formule: 5.35 # 5.35 / (durée * coefficient préservation)
+  formule: 0.29 * 2
   unité: kgCO2e/L
 
 alimentation . compléments . sodas . nombre:

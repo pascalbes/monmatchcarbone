@@ -53,15 +53,15 @@ compétition . déplacements . Départementale . empreinte:
   formule: 
     variations: 
       - si: moyen transport = 'Voiture'
-        alors: 500
+        alors: 12.08
       - si: moyen transport = 'Moto'
-        alors: 200
+        alors: 10.1
       - si: moyen transport = 'Bus'
-        alors: 50
+        alors: 2.1
       - si: moyen transport = 'Train'
-        alors: 30
+        alors: 1.48
       - si: moyen transport = 'Vélo ou à pied'
-        alors: 10
+        alors: 0.66
 
 compétition . déplacements . Départementale . moyen transport . Voiture:
   titre: Voiture 🚗
@@ -103,15 +103,15 @@ compétition . déplacements . Régionale . empreinte:
   formule: 
     variations: 
       - si: moyen transport = 'Voiture'
-        alors: 500
+        alors: 40.28
       - si: moyen transport = 'Moto'
-        alors: 200
+        alors: 33.64
       - si: moyen transport = 'Bus'
-        alors: 50
+        alors: 7.02
       - si: moyen transport = 'Train'
-        alors: 30
+        alors: 4.96
       - si: moyen transport = 'Vélo ou à pied'
-        alors: 10
+        alors: 2.2
 
 compétition . déplacements . Régionale . nombre:
   question: 'Echelle Régionale : à combien de match / tournois vous rendez-vous par année ?'
@@ -162,17 +162,15 @@ compétition . déplacements . Nationale . empreinte:
   formule: 
     variations: 
       - si: moyen transport = 'Avion'
-        alors: 1500
+        alors: 230
       - si: moyen transport = 'Voiture'
-        alors: 500
+        alors: 120.84
       - si: moyen transport = 'Moto'
-        alors: 200
+        alors: 100.92
       - si: moyen transport = 'Bus'
-        alors: 50
+        alors: 21.08
       - si: moyen transport = 'Train'
-        alors: 30
-      - si: moyen transport = 'Vélo ou à pied'
-        alors: 10
+        alors: 3.81
 
 compétition . déplacements . Nationale . nombre:
   question: 'Echelle Nationale : à combien de match / tournois vous rendez-vous par année ?'
@@ -193,7 +191,6 @@ compétition . déplacements . Nationale . moyen transport:
       - Moto
       - Bus
       - Train
-      - Vélo ou à pied
 
 compétition . déplacements . Nationale . moyen transport . Avion:
   titre: Avion ✈️
@@ -205,10 +202,6 @@ compétition . déplacements . Nationale . moyen transport . Bus:
   titre: Bus 🚌
 compétition . déplacements . Nationale . moyen transport . Train:
   titre: Train 🚊
-compétition . déplacements . Nationale . moyen transport . Vélo ou à pied:
-  titre: Vélo ou à pied 🚴 🛴 👟 
-
-
 
 
 # INTERNATIONALE
@@ -238,7 +231,7 @@ compétition . déplacements . Internationale . Avion . nombre:
   unité: h
 
 compétition . déplacements . Internationale . Avion . empreinte:
-  formule: 200
+  formule: 106.15
   unité: kgCO2e/h
 
 compétition . déplacements . Internationale . Voiture:
@@ -252,7 +245,7 @@ compétition . déplacements . Internationale . Voiture . nombre:
   unité: h
 
 compétition . déplacements . Internationale . Voiture . empreinte:
-  formule: 100
+  formule: 20.14
   unité: kgCO2e/h
 
 compétition . déplacements . Internationale . Bus:
@@ -266,7 +259,7 @@ compétition . déplacements . Internationale . Bus . nombre:
   unité: h
 
 compétition . déplacements . Internationale . Bus . empreinte:
-  formule: 100
+  formule: 2.81
   unité: kgCO2e/h
 
 compétition . déplacements . Internationale . Train:
@@ -280,5 +273,5 @@ compétition . déplacements . Internationale . Train . nombre:
   unité: h
 
 compétition . déplacements . Internationale . Train . empreinte:
-  formule: 100
+  formule: 1.06
   unité: kgCO2e/h
