@@ -31,8 +31,9 @@ alimentation . surplus:
     somme:
       - végétalien
       - végétarien
-      - omnivore1
-      - omnivore2
+      - flexitarien
+      - classique
+      - carnivore
 
 alimentation . surplus . type repas:
   question: Quel est votre type de régime alimentaire ? 
@@ -42,15 +43,15 @@ alimentation . surplus . type repas:
       possibilités: 
         - végétalien
         - végétarien
-        - omnivore1
-        - omnivore2
+        - flexitarien
+        - classique
+        - carnivore
 
 alimentation . surplus . type repas . végétalien:
 alimentation . surplus . type repas . végétarien:
-alimentation . surplus . type repas . omnivore1:
-  titre: Omnivore (avec poulet)
-alimentation . surplus . type repas . omnivore2:
-  titre: Omnivore (avec boeuf)
+alimentation . surplus . type repas . flexitarien:
+alimentation . surplus . type repas . classique:
+alimentation . surplus . type repas . carnivore:
 
 alimentation . surplus . calories:
   question: Par rapport à un être humain de votre taille et de votre genre, combien de Kcal consommez vous en plus au quotidien ?
@@ -86,29 +87,41 @@ alimentation . surplus . végétarien . empreinte:
   unité: kgCO2/kcal
   formule: 0.000657216
 
-alimentation . surplus . omnivore1:
+alimentation . surplus . flexitarien:
   formule: 
     variations: 
-      - si: type repas = 'omnivore1'
+      - si: type repas = 'flexitarien'
         alors: surplus . calories * empreinte * 365
       - sinon: 0
   unité: kgCO2e
 
-alimentation . surplus . omnivore1 . empreinte:
+alimentation . surplus . flexitarien . empreinte:
   unité: kgCO2/kcal
-  formule: 0.001450054
+  formule: 0.001450054 #TBD
 
-alimentation . surplus . omnivore2:
+alimentation . surplus . classique:
   formule: 
     variations: 
-      - si: type repas = 'omnivore2'
+      - si: type repas = 'classique'
         alors: surplus . calories * empreinte * 365
       - sinon: 0
   unité: kgCO2e
 
-alimentation . surplus . omnivore2 . empreinte:
+alimentation . surplus . classique . empreinte:
   unité: kgCO2/kcal
-  formule: 0.006844396
+  formule: 0.006844396  #TBD
+
+alimentation . surplus . carnivore:
+  formule: 
+    variations: 
+      - si: type repas = 'carnivore'
+        alors: surplus . calories * empreinte * 365
+      - sinon: 0
+  unité: kgCO2e
+
+alimentation . surplus . carnivore . empreinte:
+  unité: kgCO2/kcal
+  formule: 0.006844396  #TBD
 
 
 # --------
