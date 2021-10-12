@@ -133,11 +133,12 @@ alimentation . compléments:
     somme:
       - barres
       - boisson énergétique
+      - fruits
       - sodas
 
 alimentation . compléments . barres:
   icônes: 🍫
-  formule: empreinte * nombre
+  formule: empreinte * nombre * 12
   unité: kgCO2e
 
 alimentation . compléments . barres . empreinte:
@@ -150,7 +151,7 @@ alimentation . compléments . barres . nombre:
 
 alimentation . compléments . boisson énergétique:
   icônes: 🧃
-  formule: empreinte * nombre
+  formule: empreinte * nombre * 12
   unité: kgCO2e
 
 alimentation . compléments . boisson énergétique . empreinte:
@@ -162,9 +163,22 @@ alimentation . compléments . boisson énergétique . nombre:
   par défaut: 4
   unité: L
 
+alimentation . compléments . fruits:
+  icônes: 🍎🍐🍊
+  formule: empreinte * nombre * 12
+  unité: kgCO2e
+
+alimentation . compléments . fruits . empreinte:
+  formule: 10 # TBD
+  unité: kgCO2e
+
+alimentation . compléments . fruits . nombre:
+  question: Fruits
+  par défaut: 10
+
 alimentation . compléments . sodas:
   icônes: 🥤
-  formule: empreinte * nombre
+  formule: empreinte * nombre * 12
   unité: kgCO2e
 
 alimentation . compléments . sodas . empreinte:
