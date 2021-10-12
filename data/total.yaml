@@ -17,10 +17,10 @@ bilan:
   formule: 
     somme: 
       - profil
-      # - spectateur
-      # - compétition
-      # - equipements
-      # - transport
+      - spectateur
+      - compétition
+      - equipements
+      - transport
       - alimentation
   références: 
     - https://avenirclimatique.org/action/
