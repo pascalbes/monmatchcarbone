@@ -113,9 +113,10 @@ profil . sport . escrime . présent:
 
 
 
-
-
 profil . sport . sports collectifs:
+  titre: Sports collectifs
+  description: |
+    Football / Handball / Basket / Rugby / Volley ...
   icônes: 🏀⚽️🤾‍♀️🏐
   unité: kgCO2e
   formule:
@@ -144,6 +145,8 @@ profil . sport . sports collectifs . pratique . en club:
 
 profil . sport . sports aquatiques:
   icônes: 🚣🏻 🏄🏻
+  description: |
+    Aviron / Canoe Kayak / Voile …
   unité: kgCO2e
   formule:
     variations: 
@@ -171,6 +174,8 @@ profil . sport . sports aquatiques . pratique . en club:
 
 profil . sport . sports de raquette:
   icônes: 🎾 🥎 🏓 🏸
+  description: |
+    Tennis / Badminton / Tennis de table …
   unité: kgCO2e
   formule:
     variations: 
@@ -197,7 +202,10 @@ profil . sport . sports de raquette . pratique . en club:
 
 
 profil . sport . sports de combat:
+  titre: Sports de combat et arts martiaux 
   icônes: 🤼‍♂️
+  description: |
+    Judo / Karaté / Lutte / Boxe … 
   unité: kgCO2e
   formule:
     variations: 
@@ -224,7 +232,10 @@ profil . sport . sports de combat . pratique . en club:
 
 
 profil . sport . sports hiver:
+  titre: sports d'hiver ou de montagne
   icônes: ⛷ 🏂
+  description: |
+    Ski / snowbord / Alpinisme… 
   unité: kgCO2e
   formule:
     variations: 
@@ -252,6 +263,8 @@ profil . sport . sports hiver . pratique . en club:
 
 profil . sport . sports motorisés:
   icônes: 🏍
+  description: |
+    Kart / jetski / aviation / saut en parachute… 
   unité: kgCO2e
   formule:
     variations: 
@@ -278,7 +291,10 @@ profil . sport . sports motorisés . pratique . en club:
 
 
 profil . sport . sports suivants1:
+  titre: sports athlétiques en extérieurs
   icônes: 🥾 🚶🏾 🚶🏻‍♀️
+  description: |
+    Pétanque / Athlétisme / Course à pied / Randonnée 
   unité: kgCO2e
   formule:
     variations: 
@@ -306,7 +322,10 @@ profil . sport . sports suivants1 . pratique . en club:
 
 
 profil . sport . sports suivants2:
+  titre: sports athlétiques en intérieur
   icônes: 🕺🏽 💃
+  description: |
+    Fitness / Escalade en salle/ Gymnastique / Danse 
   unité: kgCO2e
   formule:
     variations: 
@@ -335,6 +354,7 @@ profil . sport . sports suivants2 . pratique . en club:
 
 
 profil . sport . natation bassin:
+  titre: Natation en bassin
   icônes: 🏊🏾‍♂️ 🏊🏼‍♀️ 🥽 🩲 
   unité: kgCO2e
   formule:
