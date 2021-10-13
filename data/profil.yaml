@@ -28,24 +28,6 @@ profil . sport:
       - escrime
 
 
-# [Occasionnellement / Régulièrement / En club]
-
-# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous un ou des  [Occasionnellement / Régulièrement / En club]
-# Pratiquez-vous un ou des  [Occasionnellement / Régulièrement / En club]
-# Pratiquez-vous un ou des  [Occasionnellement / Régulièrement / En club]
-# Pratiquez-vous  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous un  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous  [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous un  [Occasionnellement / Régulièrement / En club]
-# Pratiquez-vous un sport cycliste [Occasionnellement / Régulièrement / En club]
-# Pratiquez vous de l’escrime [Occasionnellement / Régulièrement / En club]
-
-
 
 profil . sport . sports collectifs . présent:
   question: Sports collectifs (football / handball / basket / rugby / volley ...)
@@ -121,10 +103,15 @@ profil . sport . sports collectifs:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports collectifs . pratique:
   applicable si: profil . sport . sports collectifs . présent
@@ -150,15 +137,20 @@ profil . sport . sports aquatiques:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports aquatiques . pratique:
   applicable si: profil . sport . sports aquatiques . présent
   question: Quel est votre degré de pratique en sports aquatiques ?
-  par défaut: "'occasionnellement'"
+  par défaut: occasionnellement
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -179,15 +171,20 @@ profil . sport . sports de raquette:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports de raquette . pratique:
   applicable si: profil . sport . sports de raquette . présent
   question: quel est votre degré de pratique en sports de raquette ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -209,15 +206,20 @@ profil . sport . sports de combat:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports de combat . pratique:
   applicable si: profil . sport . sports de combat . présent
   question: quel est votre degré de pratique en sports de combat ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -239,15 +241,20 @@ profil . sport . sports hiver:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports hiver . pratique:
   applicable si: profil . sport . sports hiver . présent
   question: quel est votre degré de pratique en sports d'hiver ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -268,15 +275,20 @@ profil . sport . sports motorisés:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports motorisés . pratique:
   applicable si: profil . sport . sports motorisés . présent
   question: quel est votre degré de pratique en sports motorisés ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -298,15 +310,20 @@ profil . sport . sports suivants1:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports suivants1 . pratique:
   applicable si: profil . sport . sports suivants1 . présent
   question: 'quel est votre degré de pratique en sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -329,15 +346,20 @@ profil . sport . sports suivants2:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sports suivants2 . pratique:
   applicable si: profil . sport . sports suivants2 . présent
   question: 'quel est votre degré de pratique en sports suivants2 : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
-  par défaut : "'occasionnellement'"
+  par défaut : 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -359,15 +381,20 @@ profil . sport . natation bassin:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . natation bassin . pratique:
   applicable si: profil . sport . natation bassin . présent
   question: quel est votre degré de pratique en natation bassin ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -388,15 +415,20 @@ profil . sport . sport sous marin:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sport sous marin . pratique:
   applicable si: profil . sport . sport sous marin . présent
   question: quel est votre degré de pratique en sport sous marin ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -417,15 +449,20 @@ profil . sport . sport de glace:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . sport de glace . pratique:
   applicable si: profil . sport . sport de glace . présent
   question: quel est votre degré de pratique en sport de glace ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -445,15 +482,20 @@ profil . sport . equitation:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . equitation . pratique:
   applicable si: profil . sport . equitation . présent
   question: quel est votre degré de pratique en equitation ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -474,15 +516,20 @@ profil . sport . golf:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . golf . pratique:
   applicable si: profil . sport . golf . présent
   question: quel est votre degré de pratique en golf ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -502,15 +549,20 @@ profil . sport . tir:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . tir . pratique:
   applicable si: profil . sport . tir . présent
   question: quel est votre degré de pratique en tir ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -531,15 +583,20 @@ profil . sport . cycliste:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . cycliste . pratique:
   applicable si: profil . sport . cycliste . présent
   question: quel est votre degré de pratique en cyclisme ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -560,15 +617,20 @@ profil . sport . escrime:
   unité: kgCO2e
   formule:
     variations: 
-      - si: présent
+      - si: pratique = 'occasionnellement'
         alors:
-          valeur: 1
-      - sinon: 0
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20
+      - si: pratique = 'en club'
+        alors:
+          valeur: 30
 
 profil . sport . escrime . pratique:
   applicable si: profil . sport . escrime . présent
   question: quel est votre degré de pratique en escrime ?
-  par défaut: "'occasionnellement'"
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui

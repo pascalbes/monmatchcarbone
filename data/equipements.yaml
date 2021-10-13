@@ -7,23 +7,9 @@ equipements:
     somme:
       - matériel
       - textile
-      - divers
   unité: kgCO2e
   applicable si: profil . sport > 0
 
-
-# -------
-# DIVERS
-# ------
-
-equipements . divers:
-  formule:
-    somme:
-      - sports collectifs
-
-equipements . divers . sports collectifs:
-  applicable si: profil . sport . sports collectifs . pratique = 'en club'
-  formule: 25
 
 # -------
 # MATERIEL
