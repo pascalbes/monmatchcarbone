@@ -138,6 +138,7 @@ alimentation . compléments:
 
 alimentation . compléments . barres:
   icônes: 🍫
+  description: (portions de 100g)
   formule: empreinte * nombre * 12
   unité: kgCO2e
 
@@ -151,6 +152,7 @@ alimentation . compléments . barres . nombre:
 
 alimentation . compléments . boisson énergétique:
   icônes: 🧃
+  description: (nombre de litres)
   formule: empreinte * nombre * 12
   unité: kgCO2e
 
@@ -165,6 +167,7 @@ alimentation . compléments . boisson énergétique . nombre:
 
 alimentation . compléments . fruits:
   icônes: 🍎🍐🍊
+  description: (portions de 100g)
   formule: empreinte * nombre * 12
   unité: kgCO2e
 
@@ -178,6 +181,7 @@ alimentation . compléments . fruits . nombre:
 
 alimentation . compléments . sodas:
   icônes: 🥤
+  description: (nombre de litres)
   formule: empreinte * nombre * 12
   unité: kgCO2e
 
