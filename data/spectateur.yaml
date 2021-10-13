@@ -195,7 +195,7 @@ spectateur . déplacements . locale . nombre:
   unité: déplacements
 
 spectateur . déplacements . locale . moyen transport:
-  question: 'Echelle locale ou régionale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
+  question: Quel moyen de transport utilisez-vous en général pour vous rendre comme spectateur sur des événements sportifs d'envergure locale ou régionale ?
   une possibilité: 
     choix obligatoire: oui
     possibilités: 
