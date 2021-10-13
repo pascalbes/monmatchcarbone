@@ -45,7 +45,7 @@ equipements . matériel . Ballons de foot ou basket:
   unité: kgCO2e
 
 equipements . matériel . Ballons de foot ou basket . nombre:
-  question: Nombre de ballons de foot ⚽️ ou basket 🏀 ?
+  question: Combien de ballons de foot ⚽️ ou basket 🏀 achetez-vous sur une année ?
   par défaut: 1
   unité: ballons
 
@@ -59,7 +59,7 @@ equipements . matériel . Ballons de volley ou handball:
   unité: kgCO2e
 
 equipements . matériel . Ballons de volley ou handball . nombre:
-  question: Nombre de ballons de volley 🏐 ou handball 🤾‍♀️ ?
+  question: Combien de ballons de volley 🏐 ou handball 🤾‍♀️ achetez-vous sur une année ?
   par défaut: 1
   unité: ballons
 
@@ -73,7 +73,7 @@ equipements . matériel . balles tennis:
   unité: kgCO2e
 
 equipements . matériel . balles tennis . nombre:
-  question: Nombre de balles de tennis ?
+  question: Combien de balles de tennis 🥎 achetez-vous sur une année ?
   par défaut: 1
   unité: balles
 
@@ -87,7 +87,7 @@ equipements . matériel . balles golf:
   unité: kgCO2e
 
 equipements . matériel . balles golf . nombre:
-  question: Nombre de balles de golf ?
+  question: Combien de balles de golf 🏌️‍♀️ achetez-vous sur une année ?
   par défaut: 1
   unité: balles
 
@@ -101,7 +101,7 @@ equipements . matériel . cartouches tir:
   unité: kgCO2e
 
 equipements . matériel . cartouches tir . nombre:
-  question: Nombre de cartouches de tir ?
+  question: Combien de cartouches de tir achetez-vous sur une année ?
   par défaut: 1
   unité: cartouches
 
