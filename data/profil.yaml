@@ -115,7 +115,7 @@ profil . sport . sports collectifs:
 
 profil . sport . sports collectifs . pratique:
   applicable si: profil . sport . sports collectifs . présent
-  question: quel est votre degré de pratique en sports collectifs 🏀⚽️🤾‍♀️🏐 ?
+  question: Quel est votre degré de pratique en sports collectifs 🏀⚽️🤾‍♀️🏐 ?
   par défaut: "'occasionnellement'"
   formule:
     une possibilité: 
@@ -183,7 +183,7 @@ profil . sport . sports de raquette:
 
 profil . sport . sports de raquette . pratique:
   applicable si: profil . sport . sports de raquette . présent
-  question: quel est votre degré de pratique en sports de raquette ?
+  question: Quel est votre degré de pratique en sports de raquette ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -218,7 +218,7 @@ profil . sport . sports de combat:
 
 profil . sport . sports de combat . pratique:
   applicable si: profil . sport . sports de combat . présent
-  question: quel est votre degré de pratique en sports de combat ?
+  question: Quel est votre degré de pratique en sports de combat ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -253,7 +253,7 @@ profil . sport . sports hiver:
 
 profil . sport . sports hiver . pratique:
   applicable si: profil . sport . sports hiver . présent
-  question: quel est votre degré de pratique en sports d'hiver ?
+  question: Quel est votre degré de pratique en sports d'hiver ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -287,7 +287,7 @@ profil . sport . sports motorisés:
 
 profil . sport . sports motorisés . pratique:
   applicable si: profil . sport . sports motorisés . présent
-  question: quel est votre degré de pratique en sports motorisés ?
+  question: Quel est votre degré de pratique en sports motorisés ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -322,7 +322,7 @@ profil . sport . sports suivants1:
 
 profil . sport . sports suivants1 . pratique:
   applicable si: profil . sport . sports suivants1 . présent
-  question: 'quel est votre degré de pratique en sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
+  question: 'Quel est votre degré de pratique en sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -358,8 +358,8 @@ profil . sport . sports suivants2:
 
 profil . sport . sports suivants2 . pratique:
   applicable si: profil . sport . sports suivants2 . présent
-  question: 'quel est votre degré de pratique en sports suivants2 : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
-  par défaut : 'occasionnellement'
+  question: 'Quel est votre degré de pratique en sports suivants2 : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
+  par défaut: 'occasionnellement'
   formule:
     une possibilité: 
       choix obligatoire: oui
@@ -393,7 +393,7 @@ profil . sport . natation bassin:
 
 profil . sport . natation bassin . pratique:
   applicable si: profil . sport . natation bassin . présent
-  question: quel est votre degré de pratique en natation bassin ?
+  question: Quel est votre degré de pratique en natation bassin ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -427,7 +427,7 @@ profil . sport . sport sous marin:
 
 profil . sport . sport sous marin . pratique:
   applicable si: profil . sport . sport sous marin . présent
-  question: quel est votre degré de pratique en sport sous marin ?
+  question: Quel est votre degré de pratique en sport sous marin ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -461,7 +461,7 @@ profil . sport . sport de glace:
 
 profil . sport . sport de glace . pratique:
   applicable si: profil . sport . sport de glace . présent
-  question: quel est votre degré de pratique en sport de glace ?
+  question: Quel est votre degré de pratique en sport de glace ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -494,7 +494,7 @@ profil . sport . equitation:
 
 profil . sport . equitation . pratique:
   applicable si: profil . sport . equitation . présent
-  question: quel est votre degré de pratique en equitation ?
+  question: Quel est votre degré de pratique en equitation ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -528,7 +528,7 @@ profil . sport . golf:
 
 profil . sport . golf . pratique:
   applicable si: profil . sport . golf . présent
-  question: quel est votre degré de pratique en golf ?
+  question: Quel est votre degré de pratique en golf ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -561,7 +561,7 @@ profil . sport . tir:
 
 profil . sport . tir . pratique:
   applicable si: profil . sport . tir . présent
-  question: quel est votre degré de pratique en tir ?
+  question: Quel est votre degré de pratique en tir ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -595,7 +595,7 @@ profil . sport . cycliste:
 
 profil . sport . cycliste . pratique:
   applicable si: profil . sport . cycliste . présent
-  question: quel est votre degré de pratique en cyclisme ?
+  question: Quel est votre degré de pratique en cyclisme ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -629,7 +629,7 @@ profil . sport . escrime:
 
 profil . sport . escrime . pratique:
   applicable si: profil . sport . escrime . présent
-  question: quel est votre degré de pratique en escrime ?
+  question: Quel est votre degré de pratique en escrime ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
