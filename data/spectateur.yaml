@@ -179,13 +179,23 @@ spectateur . déplacements:
       - nationale ou internationale
   unité: kgCO2e
 
+# MOSAIC
+
+spectateur . déplacements . locale . présent: 
+  par défaut: non
+
+spectateur . déplacements . nationale ou internationale . présent: 
+  par défaut: non
+
 # LOCALE
 
 spectateur . déplacements . locale:
+  titre: Locale ou régionale ?
   formule: nombre * empreinte
   unité: kgCO2e
 
 spectateur . déplacements . locale . nombre:
+  applicable si: déplacements . locale . présent
   question: A combien d'événements sportifs d’envergure locale ou régionale assistez-vous sur une année ?
   par défaut: 5
   suggestions:
@@ -195,6 +205,7 @@ spectateur . déplacements . locale . nombre:
   unité: déplacements
 
 spectateur . déplacements . locale . moyen transport:
+  applicable si: déplacements . locale . nombre > 0
   question: Quel moyen de transport utilisez-vous en général pour vous rendre comme spectateur sur des événements sportifs d'envergure locale ou régionale ?
   une possibilité: 
     choix obligatoire: oui
@@ -235,6 +246,7 @@ spectateur . déplacements . locale . moyen transport . Vélo ou à pied:
 # NATIONALE OU INTERNATIONALE
 
 spectateur . déplacements . nationale ou internationale:
+  titre: Nationale ou internationale ?
   formule:
     somme:
       - Avion 
