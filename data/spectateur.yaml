@@ -87,7 +87,7 @@ spectateur . numérique . télévision . visionnage . empreinte:
   unité: kgCO2e/h
 
 spectateur . numérique . télévision . matériel:
-  formule: empreinte * age
+  formule: 371 / (age + 1)
   applicable si: possession = non
   unité: kgCO2e
 
@@ -102,9 +102,9 @@ spectateur . numérique . télévision . matériel . age:
   par défaut: 2
   unité: ans
 
-spectateur . numérique . télévision . matériel . empreinte:
-  formule: 74.2
-  unité: kgCO2e/ans
+# spectateur . numérique . télévision . matériel . empreinte:
+#   formule: 74.2
+#   unité: kgCO2e/ans
 
 
 # ----------
