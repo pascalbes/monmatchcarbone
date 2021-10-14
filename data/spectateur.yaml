@@ -75,7 +75,7 @@ spectateur . numérique . télévision:
 
 spectateur . numérique . télévision . nombre:
   question: Télévision ?
-  par défaut: 10
+  par défaut: 0
   unité: h
 
 spectateur . numérique . télévision . visionnage:
@@ -87,9 +87,17 @@ spectateur . numérique . télévision . visionnage . empreinte:
   unité: kgCO2e/h
 
 spectateur . numérique . télévision . matériel:
-  formule: 371 / (age + 1)
-  applicable si: possession = non
+  formule:
+    variations:
+      - si: présent
+        alors: 371 / (age + 1)
+      - sinon: 0
   unité: kgCO2e
+
+spectateur . numérique . télévision . matériel . présent:
+  toutes ces conditions:
+    - possession = non
+    - numérique . télévision . nombre > 0
 
 spectateur . numérique . télévision . matériel . possession:
   applicable si: numérique . télévision . nombre > 0
@@ -118,7 +126,7 @@ spectateur . numérique . tablette:
 
 spectateur . numérique . tablette . nombre:
   question : Tablette
-  par défaut: 10
+  par défaut: 0
   unité: h
 
 spectateur . numérique . tablette . empreinte:
@@ -137,7 +145,7 @@ spectateur . numérique . ordinateur:
 
 spectateur . numérique . ordinateur . nombre:
   question : Ordinateur
-  par défaut: 20
+  par défaut: 0
   unité: h
 
 spectateur . numérique . ordinateur . empreinte:
@@ -155,7 +163,7 @@ spectateur . numérique . téléphone:
 
 spectateur . numérique . téléphone . nombre:
   question : Téléphone
-  par défaut: 100
+  par défaut: 0
   unité: h
 
 spectateur . numérique . téléphone . empreinte:
