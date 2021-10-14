@@ -322,7 +322,7 @@ profil . sport . sports suivants1:
 
 profil . sport . sports suivants1 . pratique:
   applicable si: profil . sport . sports suivants1 . présent
-  question: 'Quel est votre degré de pratique en sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
+  question: 'Quel est votre degré de pratique des sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -358,7 +358,7 @@ profil . sport . sports suivants2:
 
 profil . sport . sports suivants2 . pratique:
   applicable si: profil . sport . sports suivants2 . présent
-  question: 'Quel est votre degré de pratique en sports suivants2 : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
+  question: 'Quel est votre degré de pratique des sports suivants : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
@@ -393,7 +393,7 @@ profil . sport . natation bassin:
 
 profil . sport . natation bassin . pratique:
   applicable si: profil . sport . natation bassin . présent
-  question: Quel est votre degré de pratique en natation bassin ?
+  question: Quel est votre degré de pratique en natation ou sports de bassin ?
   par défaut: 'occasionnellement'
   formule:
     une possibilité: 
