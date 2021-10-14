@@ -14,7 +14,6 @@ transport:
       - train
       # - métro ou tram
       - vélo
-  applicable si: profil . sport > 0
         
 
 transport . voiture:

@@ -5,95 +5,1121 @@ equipements:
     Equipements
   formule:
     somme:
-      - matériel
+      - pratique
       - textile
   unité: kgCO2e
-  applicable si: profil . sport > 0
-
 
 # -------
-# MATERIEL
+# PRATIQUE
 # ------
 
-equipements . matériel:
+
+# Effort Matériel
+
+equipements . pratique . coefficient effort matériel:
+  formule:
+    variations: 
+      - si: effort = 'faible effort'
+        alors:
+          valeur: 1.5
+      - si: effort = 'Moyen'
+        alors:
+          valeur: 1
+      - si: effort = 'Maximum'
+        alors:
+          valeur: 0.75
+
+equipements . pratique . coefficient effort matériel . effort:
+  question: Quel effort faite vous pour garder votre matériel le plus longtemps possible ?
+  par défaut: "'Moyen'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - faible effort
+        - Moyen
+        - Maximum
+
+equipements . pratique . coefficient effort matériel . effort . faible effort:
+  titre: Peu d'efforts
+equipements . pratique . coefficient effort matériel . effort . Moyen:
+equipements . pratique . coefficient effort matériel . effort . Maximum:
+
+# Achat Matériel
+
+equipements . pratique . coefficient achat matériel:
+  formule:
+    variations: 
+      - si: type = 'acheté neuf'
+        alors:
+          valeur: 1.3
+      - si: type = 'achat occasion'
+        alors:
+          valeur: 0.5
+      - si: type = 'récupéré'
+        alors:
+          valeur: 0.2
+      - si: type = 'loué'
+        alors:
+          valeur: 0.25
+
+equipements . pratique . coefficient achat matériel . type:
+  question: 'En général le matériel que vous utilisez est :'
+  par défaut: "'Moyen'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - acheté neuf
+        - achat occasion
+        - récupéré
+        - loué
+
+equipements . pratique . coefficient achat matériel . type . acheté neuf:
+equipements . pratique . coefficient achat matériel . type . achat occasion:
+  titre: acheté d'occasion
+equipements . pratique . coefficient achat matériel . type . récupéré:
+equipements . pratique . coefficient achat matériel . type . loué:
+
+# Calcul Pratique
+
+equipements . pratique:
+  formule:
+    somme: 
+      - sports collectifs
+      - sports de raquette
+      - sports aquatiques
+      - sports de combat
+      - sports hiver
+      - sports motorisés
+      - sports suivants1
+      - sports suivants2
+      - natation bassin
+      - sport sous marin
+      - sport de glace
+      - equitation
+      - golf
+      - tir
+      - cycliste
+      - escrime
+
+
+# Sports collectifs
+
+equipements . pratique . sports collectifs:
+  titre: Sports collectifs
+  description: |
+    Football / Handball / Basket / Rugby / Volley ...
+  icônes: 🏀⚽️🤾‍♀️🏐
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+      - matériel spécifique
+
+equipements . pratique . sports collectifs . présent:
+  question: Sports collectifs (football / handball / basket / rugby / volley ...)
+  par défaut: non
+
+equipements . pratique . sports collectifs . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 3
+      - si: pratique = 'en club'
+        alors: 14
+
+equipements . pratique . sports collectifs . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 1 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 2 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+equipements . pratique . sports collectifs . pratique:
+  applicable si: pratique . sports collectifs . présent
+  question: Quel est votre degré de pratique en sports collectifs 🏀⚽️🤾‍♀️🏐 ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports collectifs . pratique . occasionnellement:
+equipements . pratique . sports collectifs . pratique . régulièrement:
+equipements . pratique . sports collectifs . pratique . en club:
+
+equipements . pratique . sports collectifs . matériel spécifique:
   formule:
     somme:
       - Ballons de foot ou basket
       - Ballons de volley ou handball
-      - balles tennis
-      - balles golf
-      - cartouches tir
-  unité: kgCO2e
 
-equipements . matériel . Ballons de foot ou basket:
-  applicable si: profil . sport . sports collectifs . présent
+equipements . pratique . sports collectifs . matériel spécifique . Ballons de foot ou basket:
+  applicable si: pratique . sports collectifs . présent
   formule: nombre * empreinte
   unité: kgCO2e
 
-equipements . matériel . Ballons de foot ou basket . nombre:
+equipements . pratique . sports collectifs . matériel spécifique . Ballons de foot ou basket . nombre:
   question: Combien de ballons de foot ⚽️ ou basket 🏀 achetez-vous sur une année ?
   par défaut: 1
   unité: ballons
 
-equipements . matériel . Ballons de foot ou basket . empreinte:
+equipements . pratique . sports collectifs . matériel spécifique . Ballons de foot ou basket . empreinte:
   valeur: 4.4
   unité: kgCO2e/ballons
 
-equipements . matériel . Ballons de volley ou handball:
-  applicable si: profil . sport . sports collectifs . présent
+equipements . pratique . sports collectifs . matériel spécifique . Ballons de volley ou handball:
+  applicable si: pratique . sports collectifs . présent
   formule: nombre * empreinte
   unité: kgCO2e
 
-equipements . matériel . Ballons de volley ou handball . nombre:
+equipements . pratique . sports collectifs . matériel spécifique . Ballons de volley ou handball . nombre:
   question: Combien de ballons de volley 🏐 ou handball 🤾‍♀️ achetez-vous sur une année ?
   par défaut: 1
   unité: ballons
 
-equipements . matériel . Ballons de volley ou handball . empreinte:
+equipements . pratique . sports collectifs . matériel spécifique . Ballons de volley ou handball . empreinte:
   valeur: 2.25
   unité: kgCO2e/ballons
 
-equipements . matériel . balles tennis:
-  applicable si: profil . sport . sports de raquette . présent
+
+# Sport de raquette
+
+equipements . pratique . sports de raquette . présent:
+  question: Sports de raquette (Tennis / Badminton / Tennis de table ...)
+  par défaut: non
+
+equipements . pratique . sports de raquette:
+  icônes: 🎾 🥎 🏓 🏸
+  description: |
+    Tennis / Badminton / Tennis de table …
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+      - matériel spécifique
+
+equipements . pratique . sports de raquette . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 13
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 53
+      - si: pratique = 'en club'
+        alors: 211
+
+equipements . pratique . sports de raquette . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 5 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 20 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 40 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+equipements . pratique . sports de raquette . pratique:
+  applicable si: pratique . sports de raquette . présent
+  question: Quel est votre degré de pratique en sports de raquette 🎾 🥎 🏓 🏸 ?
+  par défaut: "'occasionnellement'"
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports de raquette . pratique . occasionnellement:
+equipements . pratique . sports de raquette . pratique . régulièrement:
+equipements . pratique . sports de raquette . pratique . en club:
+
+equipements . pratique . sports de raquette . matériel spécifique:
+  formule:
+    somme:
+      - balles tennis
+
+equipements . pratique . sports de raquette . matériel spécifique . balles tennis:
+  applicable si: pratique . sports de raquette . présent
   formule: nombre * empreinte
   unité: kgCO2e
 
-equipements . matériel . balles tennis . nombre:
+equipements . pratique . sports de raquette . matériel spécifique . balles tennis . nombre:
   question: Combien de balles de tennis 🥎 achetez-vous sur une année ?
   par défaut: 10
   unité: balles
 
-equipements . matériel . balles tennis . empreinte:
+equipements . pratique . sports de raquette . matériel spécifique . balles tennis . empreinte:
   valeur: 0.2
   unité: kgCO2e/balles
 
-equipements . matériel . balles golf:
-  applicable si: profil . sport . golf . présent
+
+# Sports aquatiques
+
+equipements . pratique . sports aquatiques:
+  icônes: 🚣🏻 🏄🏻
+  description: |
+    Aviron / Canoe Kayak / Voile …
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+equipements . pratique . sports aquatiques . présent:
+  question: sports aquatiques (Aviron / Canoe Kayak / Voile ...)
+  par défaut: non
+
+equipements . pratique . sports aquatiques . pratique:
+  applicable si: pratique . sports aquatiques . présent
+  question: Quel est votre degré de pratique en sports aquatiques ?
+  par défaut: occasionnellement
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports aquatiques . pratique . occasionnellement:
+equipements . pratique . sports aquatiques . pratique . régulièrement:
+equipements . pratique . sports aquatiques . pratique . en club:
+
+equipements . pratique . sports aquatiques . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0
+      - si: pratique = 'en club'
+        alors: 0
+
+equipements . pratique . sports aquatiques . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 7 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 28 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 110 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+# Sports de combat
+
+equipements . pratique . sports de combat:
+  titre: Sports de combat et arts martiaux 
+  icônes: 🤼‍♂️
+  description: |
+    Judo / Karaté / Lutte / Boxe … 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+equipements . pratique . sports de combat . présent:
+  question: Sports de combat et arts martiaux (Judo / Karaté / Lutte / Boxe ...)
+  par défaut: non
+
+equipements . pratique . sports de combat . pratique:
+  applicable si: pratique . sports de combat . présent
+  question: Quel est votre degré de pratique en sports de combat ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports de combat . pratique . occasionnellement:
+equipements . pratique . sports de combat . pratique . régulièrement:
+equipements . pratique . sports de combat . pratique . en club:
+
+equipements . pratique . sports de combat . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 2 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 4 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+        
+equipements . pratique . sports de combat . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 11
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 44
+      - si: pratique = 'en club'
+        alors: 176
+
+
+# Sports d'hiver
+
+equipements . pratique . sports hiver:
+  titre: sports d'hiver ou de montagne
+  icônes: ⛷ 🏂
+  description: |
+    Ski / snowbord / Alpinisme… 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+equipements . pratique . sports hiver . présent:
+  question: Sports d’hiver ou de montagne (Ski / snowbord / Alpinisme ...)
+  par défaut: non
+
+equipements . pratique . sports hiver . pratique:
+  applicable si: pratique . sports hiver . présent
+  question: Quel est votre degré de pratique en sports d'hiver ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports hiver . pratique . occasionnellement:
+equipements . pratique . sports hiver . pratique . régulièrement:
+equipements . pratique . sports hiver . pratique . en club:
+
+equipements . pratique . sports hiver . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 2
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 8
+      - si: pratique = 'en club'
+        alors: 32
+
+equipements . pratique . sports hiver . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 29 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 115 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 461 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+# Sports motorisés
+
+equipements . pratique . sports motorisés:
+  icônes: 🏍
+  description: |
+    Kart / jetski / aviation / saut en parachute… 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . sports motorisés . présent:
+  question: Sports motorisés (kart / jetski / aviation / saut en parachute ...)
+  par défaut: non
+
+equipements . pratique . sports motorisés . pratique:
+  applicable si: pratique . sports motorisés . présent
+  question: Quel est votre degré de pratique en sports motorisés ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports motorisés . pratique . occasionnellement:
+equipements . pratique . sports motorisés . pratique . régulièrement:
+equipements . pratique . sports motorisés . pratique . en club:
+
+equipements . pratique . sports motorisés . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 10
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 41
+      - si: pratique = 'en club'
+        alors: 165
+
+equipements . pratique . sports motorisés . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 178 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 770 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 3078 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Sports suivants1
+
+equipements . pratique . sports suivants1:
+  titre: sports athlétiques en extérieurs
+  icônes: 🥾 🚶🏾 🚶🏻‍♀️
+  description: |
+    Pétanque / Athlétisme / Course à pied / Randonnée 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . sports suivants1 . présent:
+  question: sports suivants (Pétanque / Athlétisme / Course à pied / Randonnée ...)
+  par défaut: non
+
+equipements . pratique . sports suivants1 . pratique:
+  applicable si: pratique . sports suivants1 . présent
+  question: 'Quel est votre degré de pratique des sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports suivants1 . pratique . occasionnellement:
+equipements . pratique . sports suivants1 . pratique . régulièrement:
+equipements . pratique . sports suivants1 . pratique . en club:
+
+equipements . pratique . sports suivants1 . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0
+      - si: pratique = 'en club'
+        alors: 0
+
+equipements . pratique . sports suivants1 . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Sports suivants 2
+
+equipements . pratique . sports suivants2:
+  titre: sports athlétiques en intérieur
+  icônes: 🕺🏽 💃
+  description: |
+    Fitness / Escalade en salle/ Gymnastique / Danse 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . sports suivants2 . présent:
+  question: Sports suivants2 (Fitness / Escalade en salle / Gymnastique / Danse ...)
+  par défaut: non
+
+equipements . pratique . sports suivants2 . pratique:
+  applicable si: pratique . sports suivants2 . présent
+  question: 'Quel est votre degré de pratique des sports suivants : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports suivants2 . pratique . occasionnellement:
+equipements . pratique . sports suivants2 . pratique . régulièrement:
+equipements . pratique . sports suivants2 . pratique . en club:
+
+equipements . pratique . sports suivants2 . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 2
+      - si: pratique = 'en club'
+        alors: 4
+
+equipements . pratique . sports suivants2 . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 7 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 26 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 106 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Natation bassin
+
+equipements . pratique . natation bassin:
+  titre: Natation en bassin
+  icônes: 🏊🏾‍♂️ 🏊🏼‍♀️ 🥽 🩲 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . natation bassin . présent:
+  question: Natation en bassin
+  par défaut: non
+
+equipements . pratique . natation bassin . pratique:
+  applicable si: pratique . natation bassin . présent
+  question: Quel est votre degré de pratique en natation ou sports de bassin ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . natation bassin . pratique . occasionnellement:
+equipements . pratique . natation bassin . pratique . régulièrement:
+equipements . pratique . natation bassin . pratique . en club:
+
+equipements . pratique . natation bassin . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0
+      - si: pratique = 'en club'
+        alors: 0
+
+equipements . pratique . natation bassin . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 15 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 61 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 244 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Sports sous marin
+
+equipements . pratique . sport sous marin:
+  icônes: 🤿
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . sport sous marin . présent:
+  question: Un sport sous marin
+  par défaut: non
+
+equipements . pratique . sport sous marin . pratique:
+  applicable si: pratique . sport sous marin . présent
+  question: Quel est votre degré de pratique en sport sous marin ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sport sous marin . pratique . occasionnellement:
+equipements . pratique . sport sous marin . pratique . régulièrement:
+equipements . pratique . sport sous marin . pratique . en club:
+
+equipements . pratique . sport sous marin . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 4
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 17
+      - si: pratique = 'en club'
+        alors: 66
+
+equipements . pratique . sport sous marin . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Sports de glace
+
+equipements . pratique . sport de glace:
+  icônes: ⛸️ 🏒
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . sport de glace . présent:
+  question: Un sport de glace
+  par défaut: non
+
+equipements . pratique . sport de glace . pratique:
+  applicable si: pratique . sport de glace . présent
+  question: Quel est votre degré de pratique en sport de glace ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sport de glace . pratique . occasionnellement:
+equipements . pratique . sport de glace . pratique . régulièrement:
+equipements . pratique . sport de glace . pratique . en club:
+
+equipements . pratique . sport de glace . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 2
+      - si: pratique = 'en club'
+        alors: 4
+
+equipements . pratique . sport de glace . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 36 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 144 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 576 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Equitation
+
+equipements . pratique . equitation:
+  icônes: 🏇
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . equitation . présent:
+  question: L’équitation
+  par défaut: non
+
+equipements . pratique . equitation . pratique:
+  applicable si: pratique . equitation . présent
+  question: Quel est votre degré de pratique en equitation ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . equitation . pratique . occasionnellement:
+equipements . pratique . equitation . pratique . régulièrement:
+equipements . pratique . equitation . pratique . en club:
+
+equipements . pratique . equitation . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 25
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 73
+      - si: pratique = 'en club'
+        alors: 292
+
+equipements . pratique . equitation . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 3 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 14 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Golf
+
+equipements . pratique . golf:
+  icônes: 🏌️‍♀️ ⛳
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+      - matériel spécifique
+
+
+equipements . pratique . golf . présent:
+  question: Le golf
+  par défaut: non
+
+equipements . pratique . golf . pratique:
+  applicable si: pratique . golf . présent
+  question: Quel est votre degré de pratique en golf ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . golf . pratique . occasionnellement:
+equipements . pratique . golf . pratique . régulièrement:
+equipements . pratique . golf . pratique . en club:
+
+equipements . pratique . golf . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 6
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 22
+      - si: pratique = 'en club'
+        alors: 44
+
+equipements . pratique . golf . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 3 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 14 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+equipements . pratique . golf . matériel spécifique:
+  formule:
+    somme:
+      - balles golf
+
+equipements . pratique . golf . matériel spécifique . balles golf:
+  applicable si: equipements . pratique . golf . présent
   formule: nombre * empreinte
   unité: kgCO2e
 
-equipements . matériel . balles golf . nombre:
+equipements . pratique . golf . matériel spécifique . balles golf . nombre:
   question: Combien de balles de golf 🏌️‍♀️ achetez-vous sur une année ?
   par défaut: 10
   unité: balles
 
-equipements . matériel . balles golf . empreinte:
+equipements . pratique . golf . matériel spécifique . balles golf . empreinte:
   valeur: 0.3
   unité: kgCO2e/balles
 
-equipements . matériel . cartouches tir:
-  applicable si: profil . sport . tir . présent
+
+# Tir
+
+equipements . pratique . tir:
+  icônes: 🔫
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+      - matériel spécifique
+
+
+equipements . pratique . tir . présent:
+  question: Un sport de tir
+  par défaut: non
+
+equipements . pratique . tir . pratique:
+  applicable si: pratique . tir . présent
+  question: Quel est votre degré de pratique en tir ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . tir . pratique . occasionnellement:
+equipements . pratique . tir . pratique . régulièrement:
+equipements . pratique . tir . pratique . en club:
+
+equipements . pratique . tir . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 2
+      - si: pratique = 'en club'
+        alors: 4
+
+equipements . pratique . tir . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 4 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 18 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 71 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+equipements . pratique . tir . matériel spécifique:
+  formule:
+    somme:
+      - cartouches tir
+
+equipements . pratique . tir . matériel spécifique . cartouches tir:
+  applicable si: equipements . pratique . tir . présent
   formule: nombre * empreinte
   unité: kgCO2e
 
-equipements . matériel . cartouches tir . nombre:
+equipements . pratique . tir . matériel spécifique . cartouches tir . nombre:
   question: Combien de cartouches de tir achetez-vous sur une année ?
   par défaut: 100
   unité: cartouches
 
-equipements . matériel . cartouches tir . empreinte:
+equipements . pratique . tir . matériel spécifique . cartouches tir . empreinte:
   valeur: 0.12
   unité: kgCO2e/cartouches
+
+# Cycliste
+
+equipements . pratique . cycliste:
+  icônes: 🚴‍♂️ 🚴‍♀️
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . cycliste . présent:
+  question: Un sport cycliste
+  par défaut: non
+
+equipements . pratique . cycliste . pratique:
+  applicable si: pratique . cycliste . présent
+  question: Quel est votre degré de pratique en cyclisme ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . cycliste . pratique . occasionnellement:
+equipements . pratique . cycliste . pratique . régulièrement:
+equipements . pratique . cycliste . pratique . en club:
+
+equipements . pratique . cycliste . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 16
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 65
+      - si: pratique = 'en club'
+        alors: 130
+
+equipements . pratique . cycliste . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 1 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 3 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 14 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+# Escrime
+
+equipements . pratique . escrime:
+  icônes: 🤺
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . escrime . présent:
+  question: L’escrime
+  par défaut: non
+  
+equipements . pratique . escrime . pratique:
+  applicable si: pratique . escrime . présent
+  question: Quel est votre degré de pratique en escrime ?
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . escrime . pratique . occasionnellement:
+equipements . pratique . escrime . pratique . régulièrement:
+equipements . pratique . escrime . pratique . en club:
+
+equipements . pratique . escrime . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 4
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 16
+      - si: pratique = 'en club'
+        alors: 63
+
+equipements . pratique . escrime . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 6 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 25 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 99 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+
+
+
+
   
 
 # -------

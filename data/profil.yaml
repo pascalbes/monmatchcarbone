@@ -37,61 +37,33 @@ profil . sport . sports de raquette . présent:
   question: Sports de raquette (Tennis / Badminton / Tennis de table ...)
   par défaut: non
 
-profil . sport . sports de combat . présent:
-  question: Sports de combat et arts martiaux (Judo / Karaté / Lutte / Boxe ...)
-  par défaut: non
+
 
 profil . sport . sports aquatiques . présent:
   question: sports aquatiques (Aviron / Canoe Kayak / Voile ...)
   par défaut: non
 
-profil . sport . sports hiver . présent:
-  question: Sports d’hiver ou de montagne (Ski / snowbord / Alpinisme ...)
-  par défaut: non
 
-profil . sport . sports motorisés . présent:
-  question: Sports motorisés (kart / jetski / aviation / saut en parachute ...)
-  par défaut: non
 
-profil . sport . sports suivants1 . présent:
-  question: sports suivants (Pétanque / Athlétisme / Course à pied / Randonnée ...)
-  par défaut: non
 
-profil . sport . sports suivants2 . présent:
-  question: Sports suivants2 (Fitness / Escalade en salle / Gymnastique / Danse ...)
-  par défaut: non
 
-profil . sport . natation bassin . présent:
-  question: Natation en bassin
-  par défaut: non
 
-profil . sport . sport sous marin . présent:
-  question: Un sport sous marin
-  par défaut: non
 
-profil . sport . sport de glace . présent:
-  question: Un sport de glace
-  par défaut: non
 
-profil . sport . equitation . présent:
-  question: L’équitation
-  par défaut: non
 
-profil . sport . golf . présent:
-  question: Le golf
-  par défaut: non
 
-profil . sport . tir . présent:
-  question: Un sport de tir
-  par défaut: non
 
-profil . sport . cycliste . présent:
-  question: Un sport cycliste
-  par défaut: non
 
-profil . sport . escrime . présent:
-  question: L’escrime
-  par défaut: non
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -216,6 +188,10 @@ profil . sport . sports de combat:
         alors:
           valeur: 30
 
+profil . sport . sports de combat . présent:
+  question: Sports de combat et arts martiaux (Judo / Karaté / Lutte / Boxe ...)
+  par défaut: non
+
 profil . sport . sports de combat . pratique:
   applicable si: profil . sport . sports de combat . présent
   question: Quel est votre degré de pratique en sports de combat ?
@@ -251,6 +227,10 @@ profil . sport . sports hiver:
         alors:
           valeur: 30
 
+profil . sport . sports hiver . présent:
+  question: Sports d’hiver ou de montagne (Ski / snowbord / Alpinisme ...)
+  par défaut: non
+
 profil . sport . sports hiver . pratique:
   applicable si: profil . sport . sports hiver . présent
   question: Quel est votre degré de pratique en sports d'hiver ?
@@ -284,6 +264,10 @@ profil . sport . sports motorisés:
       - si: pratique = 'en club'
         alors:
           valeur: 30
+
+profil . sport . sports motorisés . présent:
+  question: Sports motorisés (kart / jetski / aviation / saut en parachute ...)
+  par défaut: non
 
 profil . sport . sports motorisés . pratique:
   applicable si: profil . sport . sports motorisés . présent
@@ -319,6 +303,10 @@ profil . sport . sports suivants1:
       - si: pratique = 'en club'
         alors:
           valeur: 30
+
+profil . sport . sports suivants1 . présent:
+  question: sports suivants (Pétanque / Athlétisme / Course à pied / Randonnée ...)
+  par défaut: non
 
 profil . sport . sports suivants1 . pratique:
   applicable si: profil . sport . sports suivants1 . présent
@@ -356,6 +344,10 @@ profil . sport . sports suivants2:
         alors:
           valeur: 30
 
+profil . sport . sports suivants2 . présent:
+  question: Sports suivants2 (Fitness / Escalade en salle / Gymnastique / Danse ...)
+  par défaut: non
+
 profil . sport . sports suivants2 . pratique:
   applicable si: profil . sport . sports suivants2 . présent
   question: 'Quel est votre degré de pratique des sports suivants : Fitness / Escalade en salle/ Gymnastique / Danse ... ?'
@@ -391,6 +383,10 @@ profil . sport . natation bassin:
         alors:
           valeur: 30
 
+profil . sport . natation bassin . présent:
+  question: Natation en bassin
+  par défaut: non
+
 profil . sport . natation bassin . pratique:
   applicable si: profil . sport . natation bassin . présent
   question: Quel est votre degré de pratique en natation ou sports de bassin ?
@@ -424,6 +420,10 @@ profil . sport . sport sous marin:
       - si: pratique = 'en club'
         alors:
           valeur: 30
+
+profil . sport . sport sous marin . présent:
+  question: Un sport sous marin
+  par défaut: non
 
 profil . sport . sport sous marin . pratique:
   applicable si: profil . sport . sport sous marin . présent
@@ -459,6 +459,10 @@ profil . sport . sport de glace:
         alors:
           valeur: 30
 
+profil . sport . sport de glace . présent:
+  question: Un sport de glace
+  par défaut: non
+
 profil . sport . sport de glace . pratique:
   applicable si: profil . sport . sport de glace . présent
   question: Quel est votre degré de pratique en sport de glace ?
@@ -491,6 +495,10 @@ profil . sport . equitation:
       - si: pratique = 'en club'
         alors:
           valeur: 30
+
+profil . sport . equitation . présent:
+  question: L’équitation
+  par défaut: non
 
 profil . sport . equitation . pratique:
   applicable si: profil . sport . equitation . présent
@@ -526,6 +534,10 @@ profil . sport . golf:
         alors:
           valeur: 30
 
+profil . sport . golf . présent:
+  question: Le golf
+  par défaut: non
+
 profil . sport . golf . pratique:
   applicable si: profil . sport . golf . présent
   question: Quel est votre degré de pratique en golf ?
@@ -558,6 +570,10 @@ profil . sport . tir:
       - si: pratique = 'en club'
         alors:
           valeur: 30
+
+profil . sport . tir . présent:
+  question: Un sport de tir
+  par défaut: non
 
 profil . sport . tir . pratique:
   applicable si: profil . sport . tir . présent
@@ -593,6 +609,10 @@ profil . sport . cycliste:
         alors:
           valeur: 30
 
+profil . sport . cycliste . présent:
+  question: Un sport cycliste
+  par défaut: non
+
 profil . sport . cycliste . pratique:
   applicable si: profil . sport . cycliste . présent
   question: Quel est votre degré de pratique en cyclisme ?
@@ -627,6 +647,10 @@ profil . sport . escrime:
         alors:
           valeur: 30
 
+profil . sport . escrime . présent:
+  question: L’escrime
+  par défaut: non
+  
 profil . sport . escrime . pratique:
   applicable si: profil . sport . escrime . présent
   question: Quel est votre degré de pratique en escrime ?

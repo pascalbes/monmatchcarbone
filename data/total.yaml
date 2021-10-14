@@ -16,7 +16,6 @@ bilan:
 
   formule: 
     somme: 
-      - profil
       - spectateur
       - compétition
       - equipements

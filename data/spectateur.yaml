@@ -12,7 +12,6 @@ spectateur:
   unité: kgCO2e
 
 spectateur . présent:
-  applicable si: profil . sport > 0
   question: Êtes-vous également spectateur, virtuel ou réel, d'événements sportifs ?
   par défaut: oui
 
