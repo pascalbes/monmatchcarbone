@@ -46,6 +46,7 @@ alimentation . surplus . type repas:
         - flexitarien
         - classique
         - carnivore
+  par défaut: classique
 
 alimentation . surplus . type repas . végétalien:
 alimentation . surplus . type repas . végétarien:
@@ -177,7 +178,7 @@ alimentation . compléments . fruits . empreinte:
 
 alimentation . compléments . fruits . nombre:
   question: Fruits
-  par défaut: 10
+  par défaut: 8
 
 alimentation . compléments . sodas:
   icônes: 🥤
@@ -191,7 +192,7 @@ alimentation . compléments . sodas . empreinte:
 
 alimentation . compléments . sodas . nombre:
   question: Sodas
-  par défaut: 10
+  par défaut: 8
   unité: L
 
 

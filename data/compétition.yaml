@@ -70,9 +70,10 @@ compétition . déplacements . Nationale . empreinte:
 
 compétition . déplacements . Nationale . nombre:
   question: 'Echelle Nationale : à combien de matchs / courses / tournois vous rendez-vous par année ?'
-  par défaut: 5
+  par défaut: 4
   suggestions:
-    zéro: 0
+    1 fois / an: 1
+    1 fois / trimestre: 4
     1 fois / mois: 12
     toutes les semaines: 52
   unité: déplacements
@@ -88,6 +89,7 @@ compétition . déplacements . Nationale . moyen transport:
       - Moto
       - Bus
       - Train
+  par défaut: Voiture
 
 compétition . déplacements . Nationale . moyen transport . Avion:
   titre: Avion ✈️
@@ -128,9 +130,10 @@ compétition . déplacements . Régionale . empreinte:
 
 compétition . déplacements . Régionale . nombre:
   question: 'Echelle Régionale : à combien de matchs / courses / tournois vous rendez-vous par année ?'
-  par défaut: 5
+  par défaut: 4
   suggestions:
-    zéro: 0
+    1 fois / an: 1
+    1 fois / trimestre: 4
     1 fois / mois: 12
     toutes les semaines: 52
   unité: déplacements
@@ -146,6 +149,7 @@ compétition . déplacements . Régionale . moyen transport:
       - Bus
       - Train
       - Vélo ou à pied
+  par défaut: Voiture
 
 compétition . déplacements . Régionale . moyen transport . Voiture:
   titre: Voiture 🚗
@@ -204,12 +208,14 @@ compétition . déplacements . Départementale . moyen transport:
       - Bus
       - Train
       - Vélo ou à pied
+  par défaut: Voiture
 
 compétition . déplacements . Départementale . nombre:
   question: 'Echelle Départementale : à combien de matchs / courses / tournois vous rendez-vous par année ?'
-  par défaut: 5
+  par défaut: 4
   suggestions:
-    aucun: 0
+    1 fois / an: 1
+    1 fois / trimestre: 4
     1 fois / mois: 12
     toutes les semaines: 52
   unité: déplacements
@@ -238,7 +244,7 @@ compétition . déplacements . Internationale . Avion:
 
 compétition . déplacements . Internationale . Avion . nombre:
   question: En avion
-  par défaut: 0
+  par défaut: 10
   unité: h
 
 compétition . déplacements . Internationale . Avion . empreinte:

@@ -60,7 +60,7 @@ equipements . matériel . balles tennis:
 
 equipements . matériel . balles tennis . nombre:
   question: Combien de balles de tennis 🥎 achetez-vous sur une année ?
-  par défaut: 1
+  par défaut: 10
   unité: balles
 
 equipements . matériel . balles tennis . empreinte:
@@ -74,7 +74,7 @@ equipements . matériel . balles golf:
 
 equipements . matériel . balles golf . nombre:
   question: Combien de balles de golf 🏌️‍♀️ achetez-vous sur une année ?
-  par défaut: 1
+  par défaut: 10
   unité: balles
 
 equipements . matériel . balles golf . empreinte:
@@ -88,7 +88,7 @@ equipements . matériel . cartouches tir:
 
 equipements . matériel . cartouches tir . nombre:
   question: Combien de cartouches de tir achetez-vous sur une année ?
-  par défaut: 1
+  par défaut: 100
   unité: cartouches
 
 equipements . matériel . cartouches tir . empreinte:
@@ -118,7 +118,7 @@ equipements . textile . maillots:
 
 equipements . textile . maillots . nombre:
   question: Maillots ?
-  par défaut: 0
+  par défaut: 4
 
 equipements . textile . maillots . empreinte:
   formule: 5.35
@@ -131,7 +131,7 @@ equipements . textile . short et cycliste:
 
 equipements . textile . short et cycliste . nombre:
   question: Shorts et cyclistes ?
-  par défaut: 0
+  par défaut: 1
 
 equipements . textile . short et cycliste . empreinte:
   formule: 6.4
@@ -157,7 +157,7 @@ equipements . textile . survêtements:
 
 equipements . textile . survêtements . nombre:
   question: Survêtements ?
-  par défaut: 0
+  par défaut: 1
 
 equipements . textile . survêtements . empreinte:
   formule: 23.2
@@ -170,7 +170,7 @@ equipements . textile . chaussettes:
 
 equipements . textile . chaussettes . nombre:
   question: Paire de chaussettes ?
-  par défaut: 0
+  par défaut: 4
 
 equipements . textile . chaussettes . empreinte:
   formule: 1.5
@@ -183,7 +183,7 @@ equipements . textile . manteau:
 
 equipements . textile . manteau . nombre:
   question: Manteaux ?
-  par défaut: 0
+  par défaut: 1
 
 equipements . textile . manteau . empreinte:
   formule: 38.7

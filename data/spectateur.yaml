@@ -39,6 +39,7 @@ spectateur . suivi . type:
       - assidument
       - de temps en temps
       - jamais
+  par défaut: de temps en temps
 
 spectateur . suivi . type . assidument:
 spectateur . suivi . type . de temps en temps:
@@ -75,7 +76,7 @@ spectateur . numérique . télévision:
 
 spectateur . numérique . télévision . nombre:
   question: Télévision ?
-  par défaut: 0
+  par défaut: 6
   unité: h
 
 spectateur . numérique . télévision . visionnage:
@@ -102,12 +103,12 @@ spectateur . numérique . télévision . matériel . présent:
 spectateur . numérique . télévision . matériel . possession:
   applicable si: numérique . télévision . nombre > 0
   question: Si vous ne regardiez pas de sport à la télévision, auriez-vous une télévision ?
-  par défaut: oui
+  par défaut: non
 
 spectateur . numérique . télévision . matériel . age:
   applicable si: numérique . télévision . nombre > 0
   question: Quel âge à votre télévision ?
-  par défaut: 2
+  par défaut: 4
   unité: ans
 
 # spectateur . numérique . télévision . matériel . empreinte:
@@ -145,7 +146,7 @@ spectateur . numérique . ordinateur:
 
 spectateur . numérique . ordinateur . nombre:
   question : Ordinateur
-  par défaut: 0
+  par défaut: 4
   unité: h
 
 spectateur . numérique . ordinateur . empreinte:
@@ -205,9 +206,9 @@ spectateur . déplacements . locale:
 spectateur . déplacements . locale . nombre:
   applicable si: déplacements . locale . présent
   question: A combien d'événements sportifs d’envergure locale ou régionale assistez-vous sur une année ?
-  par défaut: 5
+  par défaut: 4
   suggestions:
-    aucun: 0
+    1 fois / trimestre: 4
     1 fois / mois: 12
     toutes les semaines: 52
   unité: déplacements
@@ -223,6 +224,7 @@ spectateur . déplacements . locale . moyen transport:
       - Bus
       - Train
       - Vélo ou à pied
+    par défaut: Voiture
 
 spectateur . déplacements . locale . empreinte:
   unité: kgCO2e/déplacements
@@ -271,7 +273,7 @@ spectateur . déplacements . nationale ou internationale . Avion:
 
 spectateur . déplacements . nationale ou internationale . Avion . nombre:
   question: En avion
-  par défaut: 0
+  par défaut: 5
   unité: h
 
 spectateur . déplacements . nationale ou internationale . Avion . empreinte:
@@ -285,7 +287,7 @@ spectateur . déplacements . nationale ou internationale . Voiture:
 
 spectateur . déplacements . nationale ou internationale . Voiture . nombre:
   question: En voiture
-  par défaut: 0
+  par défaut: 5
   unité: h
 
 spectateur . déplacements . nationale ou internationale . Voiture . empreinte:

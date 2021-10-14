@@ -71,11 +71,8 @@ transport . voiture . km:
 
   par défaut: 100 km/mois
   suggestions: 
-    zéro: 0 km/mois
-    vacances: 200 km/mois
-    10km / jour: 300 km/mois
-    20km / jour: 600 km/mois
-
+    1 déplacement / semaine : 100 km/mois
+    1 déplacement / mois : 20 km/mois
 
 transport . voiture . motorisation: 
   question: Quel type de voiture utilisez-vous pour vous rendre à une activité sportive ?
@@ -418,12 +415,8 @@ transport . bus . impact par heure:
 
 transport . bus . heures par mois:
   question: Combien d'heures passez-vous dans un bus 🚌 pour vous rendre à une activité sportive, par mois ?
-  suggestions: 
-    zéro: 0
-    1h / jour: 30
-    2h / jour: 60
   unité: heures/mois
-  par défaut: 3 heures/mois
+  par défaut: 4 heures/mois
 
 
 
@@ -442,7 +435,7 @@ transport . deux roues thermique . présent:
 
 transport . deux roues thermique . km: 
   question: Combien de km faites-vous par mois avec votre scooter ou moto pour vous rendre à une activité sportive ? 
-  par défaut: 1000 km/mois
+  par défaut: 100 km/mois
   unité: km/mois
 
 transport . deux roues thermique . type: 
@@ -539,11 +532,7 @@ transport . vélo . km:
     Mais ne vous inquiétez pas trop de la précision : l'empreinte de ces modes sobres est ici considérée comme nulle, votre réponse n'aura donc aucune conséquence 😄.
 
     > Note : 🛗 l'ascenseur est le transport en commun électrique le plus oublié ! Il n'a pas plus d'empreinte en ordre de grandeur que le vélo électrique.
-  suggestions: 
-    zéro ou presque: 0 km
-    5km par jour: 35 km
-    10km par jour: 70 km
-  par défaut: 5 km
+  par défaut: 20 km
   note: Le chiffre par défaut est une grossière estimation sans source, mais peu importe vu l'impact final nul.
 
 
