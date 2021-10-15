@@ -68,7 +68,7 @@ compétition . déplacements . Nationale . empreinte:
         alors: 3.81
 
 compétition . déplacements . Nationale . nombre:
-  question: 'Echelle Nationale : à combien de matchs / courses / tournois vous rendez-vous par année ?'
+  question: 'Echelle Nationale : à combien de match / courses / tournois vous rendez-vous par année ?'
   par défaut: 4
   suggestions:
     1 fois / an: 1
@@ -128,7 +128,7 @@ compétition . déplacements . Régionale . empreinte:
         alors: 2.2
 
 compétition . déplacements . Régionale . nombre:
-  question: 'Echelle Régionale : à combien de matchs / courses / tournois vous rendez-vous par année ?'
+  question: 'Echelle Régionale : à combien de match / courses / tournois vous rendez-vous par année ?'
   par défaut: 4
   suggestions:
     1 fois / an: 1
@@ -210,7 +210,7 @@ compétition . déplacements . Départementale . moyen transport:
   par défaut: Voiture
 
 compétition . déplacements . Départementale . nombre:
-  question: 'Echelle Départementale : à combien de matchs / courses / tournois vous rendez-vous par année ?'
+  question: 'Echelle Départementale : à combien de match / courses / tournois vous rendez-vous par année ?'
   par défaut: 4
   suggestions:
     1 fois / an: 1
