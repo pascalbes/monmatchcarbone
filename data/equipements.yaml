@@ -88,11 +88,11 @@ equipements . pratique:
     somme: 
       - sports collectifs
       - sports de raquette
+      - sports suivants1
       - sports aquatiques
       - sports de combat
       - sports hiver
       - sports motorisés
-      - sports suivants1
       - sports suivants2
       - natation bassin
       - sport sous marin
@@ -272,6 +272,65 @@ equipements . pratique . sports de raquette . matériel spécifique . balles ten
 equipements . pratique . sports de raquette . matériel spécifique . balles tennis . empreinte:
   valeur: 0.2
   unité: kgCO2e/balles
+
+
+# Sports suivants1
+
+equipements . pratique . sports suivants1:
+  titre: sports athlétiques en extérieurs
+  icônes: 🥾 🚶🏾 🚶🏻‍♀️
+  description: |
+    Athlétisme / Course à pied / Randonnée 
+  unité: kgCO2e
+  formule:
+    somme:
+      - energie
+      - equipement
+
+
+equipements . pratique . sports suivants1 . présent:
+  question: sports suivants (Athlétisme / Course à pied / Randonnée ...)
+  par défaut: non
+
+equipements . pratique . sports suivants1 . pratique:
+  applicable si: pratique . sports suivants1 . présent
+  question: 'Quel est votre degré de pratique des sports suivants: Athlétisme / Course à pied / Randonnée ... ?'
+  par défaut: 'occasionnellement'
+  formule:
+    une possibilité: 
+      choix obligatoire: oui
+      possibilités: 
+        - occasionnellement
+        - régulièrement
+        - en club
+
+equipements . pratique . sports suivants1 . pratique . occasionnellement:
+equipements . pratique . sports suivants1 . pratique . régulièrement:
+equipements . pratique . sports suivants1 . pratique . en club:
+
+equipements . pratique . sports suivants1 . energie:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0
+      - si: pratique = 'en club'
+        alors: 0
+
+equipements . pratique . sports suivants1 . equipement:
+  formule: 
+    variations: 
+      - si: pratique = 'occasionnellement'
+        alors:
+          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'régulièrement'
+        alors:
+          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
+      - si: pratique = 'en club'
+        alors: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
 
 
 # Sports aquatiques
@@ -502,66 +561,6 @@ equipements . pratique . sports motorisés . equipement:
           valeur: 770 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
       - si: pratique = 'en club'
         alors: 3078 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
-
-
-
-# Sports suivants1
-
-equipements . pratique . sports suivants1:
-  titre: sports athlétiques en extérieurs
-  icônes: 🥾 🚶🏾 🚶🏻‍♀️
-  description: |
-    Pétanque / Athlétisme / Course à pied / Randonnée 
-  unité: kgCO2e
-  formule:
-    somme:
-      - energie
-      - equipement
-
-
-equipements . pratique . sports suivants1 . présent:
-  question: sports suivants (Pétanque / Athlétisme / Course à pied / Randonnée ...)
-  par défaut: non
-
-equipements . pratique . sports suivants1 . pratique:
-  applicable si: pratique . sports suivants1 . présent
-  question: 'Quel est votre degré de pratique des sports suivants: Pétanque / Athlétisme / Course à pied / Randonnée ... ?'
-  par défaut: 'occasionnellement'
-  formule:
-    une possibilité: 
-      choix obligatoire: oui
-      possibilités: 
-        - occasionnellement
-        - régulièrement
-        - en club
-
-equipements . pratique . sports suivants1 . pratique . occasionnellement:
-equipements . pratique . sports suivants1 . pratique . régulièrement:
-equipements . pratique . sports suivants1 . pratique . en club:
-
-equipements . pratique . sports suivants1 . energie:
-  formule: 
-    variations: 
-      - si: pratique = 'occasionnellement'
-        alors:
-          valeur: 0
-      - si: pratique = 'régulièrement'
-        alors:
-          valeur: 0
-      - si: pratique = 'en club'
-        alors: 0
-
-equipements . pratique . sports suivants1 . equipement:
-  formule: 
-    variations: 
-      - si: pratique = 'occasionnellement'
-        alors:
-          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
-      - si: pratique = 'régulièrement'
-        alors:
-          valeur: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
-      - si: pratique = 'en club'
-        alors: 0 * pratique . coefficient achat matériel * pratique . coefficient effort matériel
 
 
 
