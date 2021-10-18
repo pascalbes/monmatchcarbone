@@ -25,12 +25,18 @@ alimentation:
 alimentation . surplus:
   unité: kgCO2e
   formule:
-    somme:
-      - végétalien
-      - végétarien
-      - flexitarien
-      - classique
-      - carnivore
+    variations: 
+      - si: type repas = 'végétalien'
+        alors: calories * empreinte végétalien * 365
+      - si: type repas = 'végétarien'
+        alors: calories * empreinte végétarien * 365
+      - si: type repas = 'flexitarien'
+        alors: calories * empreinte flexitarien * 365
+      - si: type repas = 'classique'
+        alors: calories * empreinte classique * 365
+      - si: type repas = 'carnivore'
+        alors: calories * empreinte carnivore * 365
+      - sinon: calories * empreinte classique * 365
 
 alimentation . surplus . type repas:
   question: Quel est votre type de régime alimentaire ? 
@@ -48,7 +54,7 @@ alimentation . surplus . type repas:
 alimentation . surplus . type repas . végétalien:
 alimentation . surplus . type repas . végétarien:
 alimentation . surplus . type repas . flexitarien:
-alimentation . surplus . type repas . classique:
+alimentation . surplus . type repas . classique: oui
 alimentation . surplus . type repas . carnivore:
 
 alimentation . surplus . calories:
@@ -61,63 +67,23 @@ alimentation . surplus . calories:
   unité: kcal
   par défaut: 200
 
-alimentation . surplus . végétalien:
-  formule: 
-    variations: 
-      - si: type repas = 'végétalien'
-        alors: surplus . calories * empreinte * 365
-      - sinon: 0
-  unité: kgCO2e
-
-alimentation . surplus . végétalien . empreinte:
+alimentation . surplus . empreinte végétalien:
   unité: kgCO2/kcal
   formule: 0.98 / 2500
 
-alimentation . surplus . végétarien:
-  formule: 
-    variations: 
-      - si: type repas = 'végétarien'
-        alors: surplus . calories * empreinte * 365
-      - sinon: 0
-  unité: kgCO2e
-
-alimentation . surplus . végétarien . empreinte:
+alimentation . surplus . empreinte végétarien:
   unité: kgCO2/kcal
   formule: 1.76 / 2500
 
-alimentation . surplus . flexitarien:
-  formule: 
-    variations: 
-      - si: type repas = 'flexitarien'
-        alors: surplus . calories * empreinte * 365
-      - sinon: 0
-  unité: kgCO2e
-
-alimentation . surplus . flexitarien . empreinte:
+alimentation . surplus . empreinte flexitarien:
   unité: kgCO2/kcal
   formule: 2.86 / 2500
 
-alimentation . surplus . classique:
-  formule: 
-    variations: 
-      - si: type repas = 'classique'
-        alors: surplus . calories * empreinte * 365
-      - sinon: 0
-  unité: kgCO2e
-
-alimentation . surplus . classique . empreinte:
+alimentation . surplus . empreinte classique:
   unité: kgCO2/kcal
   formule: 4.53 / 2500
 
-alimentation . surplus . carnivore:
-  formule: 
-    variations: 
-      - si: type repas = 'carnivore'
-        alors: surplus . calories * empreinte * 365
-      - sinon: 0
-  unité: kgCO2e
-
-alimentation . surplus . carnivore . empreinte:
+alimentation . surplus . empreinte carnivore:
   unité: kgCO2/kcal
   formule: 8.84 / 2500
 
