@@ -204,7 +204,7 @@ spectateur . déplacements . locale:
 
 spectateur . déplacements . locale . nombre:
   applicable si: déplacements . locale . présent
-  question: A combien d'événements sportifs d’envergure locale ou régionale assistez-vous sur une année ?
+  question: A combien d'événements sportifs pour lesquels vous effectuez un déplacement d’envergure locale ou régionale assistez-vous sur une année ?
   par défaut: 4
   suggestions:
     1 fois / trimestre: 4

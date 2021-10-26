@@ -199,6 +199,7 @@ compétition . déplacements . Départementale . moyen transport . Vélo ou à p
 compétition . déplacements . Départementale . moyen transport:
   applicable si: déplacements . Départementale . nombre > 0
   question: 'Echelle Départementale : quel moyen de transport utilisez-vous en général pour vos déplacements ?'
+  description: Le choix a été fait de simplifier au maximum et donc de prendre une valeur moyenne de déplacement commune à tous les départements. Celui-ci est de 30km aller.
   une possibilité: 
     choix obligatoire: oui
     possibilités: 

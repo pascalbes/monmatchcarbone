@@ -11,7 +11,7 @@ transport:
       - voiture
       - deux roues thermique
       - bus
-      - train
+      - train ou métro
       # - métro ou tram
       - vélo
         
@@ -537,32 +537,33 @@ transport . vélo . km:
 
 
   
-transport . train:
+transport . train ou métro:
+  titre: Train / métro
   icônes: 🚋
   applicable si: présent
   description: |
   
     ![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/TER_Vesoul.jpg/640px-TER_Vesoul.jpg)
     
-  formule: km * impact par km
+  formule: km * impact par km * 12
 
-transport . train . présent:
+transport . train ou métro . présent:
   question: Train ?
   par défaut: non
 
-transport . train . impact par km:
+transport . train ou métro . impact par km:
   formule: 0.0056
   unité: kgCO2e/km
-transport . train . km:
-  question: Combien de kilomètres parcourez-vous en train par an pour vous rendre à une activité sportive ?
+transport . train ou métro . km:
+  question: Combien de kilomètres parcourez-vous en métro / train par mois pour vous rendre à une activité sportive ?
   description: Les suggestions sont basées sur la distance à vol d'oiseau doublée pour considérer un aller-retour.
   suggestions: 
     traversée d'une région: 300
     Paris↔Lyon: 800
     Brest↔Nice: 2400 
     💳 grand voyageur plus ultra: 10000
-  unité: km/an
-  par défaut: 1000 km/an
+  unité: km/mois
+  par défaut: 1000 km/mois
 
 transport . métro ou tram:
   icônes: 🚊
