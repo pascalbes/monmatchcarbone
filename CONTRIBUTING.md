@@ -1,10 +1,10 @@
-# Contribuer à nosgestesclimat
+# Contribuer à Mon Match Carbone
 
 Bienvenue 👋 ! 
 
-Ce dépôt contient un modèle d'empreinte carbone personnelle annuelle, écrit en YAML. Pas de panique, on vous explique plus bas ce que ça veut dire et comment le modifier.
+Ce dépôt contient un modèle d'empreinte carbone sportive annuelle, écrit en YAML. Pas de panique, on vous explique plus bas ce que ça veut dire et comment le modifier.
 
-Ce modèle pose des questions sur les aspects de la vie d'un individu qui émettent le plus de gaz à effet de serre (GES) mesuré en CO2e. L'objectif n'est pas d'en faire une comptabilité parfaite, mais la plus représentative en posant un nombre de question qui reste acceptable pour tous, à hauteur de l'engagement personnel moyen aujourd'hui en 2020.
+Ce modèle pose des questions sur les aspects de la vie sportive d'un individu qui émettent le plus de gaz à effet de serre (GES) mesuré en CO2e. L'objectif n'est pas d'en faire une comptabilité parfaite, mais la plus représentative en posant un nombre de question qui reste acceptable pour tous.
 
 ## 💾 Les modèles carbone
 
@@ -44,16 +44,16 @@ Sinon, écrivez-nous sur [notre formulaire de retour](https://nosgestesclimat.fr
 
 ### Si vous voulez participer à l'amélioration du modèle [⌛ 20 minutes]
 
-Tous les textes, par exemple le texte d'une question ou le texte d'une suggestion de saisie, sont stockés dans une [collection de fichiers texte](https://github.com/datagir/nosgestesclimat/tree/master/data), classés par grande catégorie (logement, alimentation, etc.). C'est un langage très accessible que vous pouvez modifier directement. Pour cela il vous faut un compte Github, qui peut se créer gratuitement en 2-3 minutes.
+Tous les textes, par exemple le texte d'une question ou le texte d'une suggestion de saisie, sont stockés dans une [collection de fichiers texte](https://github.com/pascalbes/monmatchcarbone/tree/master/data), classés par grande catégorie. C'est un langage très accessible que vous pouvez modifier directement. Pour cela il vous faut un compte Github, qui peut se créer gratuitement en 2-3 minutes.
  
 Puis suivez ces étapes : 
 
-- rendez-vous sur l'un des modèles classés par grande catégorie [ici](https://github.com/datagir/nosgestesclimat/tree/master/data). Sélectionnez-en une, par exemple "numérique.yaml". Cliquez sur l'icône ✏ en haut à droite, vous êtes en mode édition !
+- rendez-vous sur l'un des modèles classés par grande catégorie [ici](https://github.com/pascalbes/monmatchcarbone/tree/master/data). Sélectionnez-en une. Cliquez sur l'icône ✏ en haut à droite, vous êtes en mode édition !
 - cliquez n'importe où dans le contenu du fichier, puis tapez Ctrl-F (pour lancer une recherche), cherchez le texte à modifier (par exemple "Quel est l'age de votre smartphone"), modifiez directement le texte sur cette page (corriger "age" en "âge")
 - puis cliquez sur le bouton vert 🟩 `Propose file change`. Sur la page qui s'affiche intitulée "Comparing changes", cliquez sur le bouton vert `Create pull request`
 - 🎉 Bravo, l'équipe verra votre contribution et la validera si elle est parfaite. Sinon, on en discutera ensemble 🙂.
 
-- Ce n'est pas tout ! Vous pouvez maintenant tester le site comme si vos changements avaient été validés 😎 : une fois votre pull request (PR) créée, allez sur https://nosgestesclimat.fr/, ajoutez à la fin de l'adresse dans votre navigateur `?PR=X` où X est le numéro de votre pull request (juste après le # dans le titre de votre PR).
+- Ce n'est pas tout ! Vous pouvez maintenant tester le site comme si vos changements avaient été validés 😎 : une fois votre pull request (PR) créée, allez sur https://monmatchcarbone.fr/, ajoutez à la fin de l'adresse dans votre navigateur `?PR=X` où X est le numéro de votre pull request (juste après le # dans le titre de votre PR).
 
 ### Si vous voulez construire vous-même de nouveaux modèles [⌛ 1 heure ou 2]
 
@@ -79,12 +79,4 @@ prix . avocat:
   
 ``` 
 
-> 💡 Pour faciliter la relecture par les autres contributeurs et l'équipe, la discussion et les itérations, mieux vaut faire une PR (*Pull request*, proposition de changements) par sujet. Par exemple, faite une PR pour votre proposition "ajouter la moto au simulateur". Faites-en une autre pour votre proposition "amélioration des données d'empreinte de construction des véhicules électriques".
-
-### Vous voulez devenir un pro des modèles carbone
-
-Nous travaillons à un environnement Web de développement, vous pouvez en avoir un avant goût sur le [studio publicodes](https://publi.codes/studio). 
-
-En attendant, pour travailler sur ces modèles YAML et voir vos changements mettre à jour l'interface de simulation (sans F5, c'est magique), il faut adopter la méthode de travail d'un développeur Web.
-
-Il va falloir se documenter pour comprendre ce qu'est [*git*](https://openclassrooms.com/fr/courses/1233741-gerez-vos-codes-source-avec-git), cloner ce dépôt vers un dossier nommé "nosgestesclimat", puis cloner [nosgestesclimat-site](https://github.com/datagir/nosgestesclimat-site) à la même racine, entrer dans ecolab-climat et faire `yarn && yarn start`. Vous pourrez alors modifier les fichiers .yaml et voir en temps réel les résultats des calculs changer, et les simulations poser de nouvelles questions :sparkles: .
+> 💡 Pour faciliter la relecture par les autres contributeurs et l'équipe, la discussion et les itérations, mieux vaut faire une PR (*Pull request*, proposition de changements) par sujet. Par exemple, faite une PR pour votre proposition "ajouter le curling au simulateur".
