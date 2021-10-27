@@ -34,13 +34,13 @@ N'hésitez pas à poser des questions sur le langage ou la contribution en créa
 
 ### Avant tout : vérifier que votre question n'est pas déjà posée
 
-Il y a de grandes chances que ce soit déjà le cas : direction [l'onglet *issues*](https://github.com/datagir/nosgestesclimat/issues), et son moteur de recherche. La pile est déjà bien remplie !
+Il y a de grandes chances que ce soit déjà le cas : direction [l'onglet *issues*](https://github.com/pascalbes/monmatchcarbone/issues), et son moteur de recherche. La pile est déjà bien remplie !
 
 ### Si vous n'avez que ⌛ 2 minutes pour faire une remarque
 
-Si vous avez un compte Github, [créez simplement une issue](https://github.com/datagir/nosgestesclimat/issues/new) qui parle de votre idée ou correction et qui contient le calcul ou les interrogations en français.
+Si vous avez un compte Github, [créez simplement une issue](https://github.com/pascalbes/monmatchcarbone/issues/new) qui parle de votre idée ou correction et qui contient le calcul ou les interrogations en français.
 
-Sinon, écrivez-nous sur [notre formulaire de retour](https://nosgestesclimat.fr/contribuer).
+Sinon, écrivez-nous sur [notre formulaire de retour](https://monmatchcarbone.fr/contribuer).
 
 ### Si vous voulez participer à l'amélioration du modèle [⌛ 20 minutes]
 

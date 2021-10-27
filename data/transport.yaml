@@ -386,8 +386,6 @@ transport . voiture . propriétaire:
 
 transport . bus:
   icônes: 🚌
-  # description: |
-  #   ![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Alliance_Auch_ligne_6_Allées_Baylac.JPG/640px-Alliance_Auch_ligne_6_Allées_Baylac.JPG)
   formule: heures par mois * impact par heure * nombre de mois
   applicable si: présent
 
