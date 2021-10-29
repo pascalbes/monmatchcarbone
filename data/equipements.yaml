@@ -30,7 +30,7 @@ equipements . pratique . coefficient effort matériel:
           valeur: 0.75
 
 equipements . pratique . coefficient effort matériel . effort:
-  question: Quel effort faite vous pour garder votre matériel le plus longtemps possible ?
+  question: Quel effort faites-vous pour garder votre matériel le plus longtemps possible ?
   par défaut: "'Moyen'"
   formule:
     une possibilité: 
