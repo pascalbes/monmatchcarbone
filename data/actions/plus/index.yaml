@@ -1,0 +1,5 @@
+actions: 
+  formule: 
+    somme:
+      - transport . arrêter l'avion
+      - alimentation . devenir végétarien
