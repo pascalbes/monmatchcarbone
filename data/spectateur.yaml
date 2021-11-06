@@ -247,7 +247,7 @@ spectateur . déplacements . locale . moyen transport . Moto:
 spectateur . déplacements . locale . moyen transport . Bus:
   titre: Bus 🚌
 spectateur . déplacements . locale . moyen transport . Train:
-  titre: Train 🚊
+  titre: Train ou métro 🚊
 spectateur . déplacements . locale . moyen transport . Vélo ou à pied:
   titre: Vélo ou à pied 🚴 🛴 👟 
 
@@ -308,6 +308,7 @@ spectateur . déplacements . nationale ou internationale . Bus . empreinte:
   unité: kgCO2e/h
 
 spectateur . déplacements . nationale ou internationale . Train:
+  titre: Train ou métro
   icônes: 🚊
   formule: nombre * empreinte
   unité: kgCO2e

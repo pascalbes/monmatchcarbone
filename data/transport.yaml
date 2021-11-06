@@ -536,7 +536,7 @@ transport . vélo . km:
 
   
 transport . train ou métro:
-  titre: Train / métro
+  titre: Train ou métro
   icônes: 🚋
   applicable si: présent
   description: |
