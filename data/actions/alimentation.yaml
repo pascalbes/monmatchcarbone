@@ -1,0 +1,36 @@
+alimentation . devenir végétarien:
+  applicable si: 
+    une de ces conditions:
+      - alimentation . surplus . type repas = 'flexitarien'
+      - alimentation . surplus . type repas = 'classique'
+      - alimentation . surplus . type repas = 'carnivore'
+  formule: alimentation . surplus - alimentation . surplus . calories * alimentation . surplus . empreinte végétarien * 365
+  icônes: 🥗🧀
+  description: |
+    Adopter un régime végétarien, donc sans viande ni poisson (mais avec des oeufs, du lait, du fromage, des yaourts).
+
+    Moins fort que le régime végétalien, il permet déjà une réduction très importante de l'empreinte sur le climat.
+ 
+alimentation . Privilégier la volaille ou le porc:
+  applicable si: 
+    une de ces conditions:
+      - alimentation . surplus . type repas = 'classique'
+      - alimentation . surplus . type repas = 'carnivore'
+  formule: alimentation . surplus - alimentation . surplus . calories * alimentation . surplus . empreinte flexitarien * 365
+  icônes: 🥩🍗
+  description: |
+    L’empreinte climat de notre alimentation est directement corrélée à notre consommation de viande, mais il faut savoir que toutes ne sont pas égales de ce point de vue. 
+    > À titre de comparaison, ramenée au kilo une entrecôte émet 6 fois plus de gaz à effet de serre que des filets de poulets.
+    
+    Pour en savoir plus sur les impacts de notre consommation de viande, n'hésitez pas à consulter l'[explication complète](/actions/plus/alimentation/réduire-viande/par-deux).
+
+alimentation . manger de la viande uniquement le week-end:
+  applicable si: 
+    une de ces conditions:
+      - alimentation . surplus . type repas = 'classique'
+      - alimentation . surplus . type repas = 'carnivore'
+  formule: alimentation . surplus - alimentation . surplus . calories * alimentation . surplus . empreinte végétarien * 365 * 5 / 7 - alimentation . surplus . calories * alimentation . surplus . empreinte classique * 365 * 2 / 7  
+  icônes: 🍖📉
+  description: |
+    Il est tout à fait possible de réduire significativement l'empreinte de son alimentation, sans devenir strictement végétarien.
+    Sur ce geste, on remplace les 3/4 de vos repas carnés par des repas végétariens, ce qui est une bonne approximation   d'une consommation de viande réservée aux week-ends.
