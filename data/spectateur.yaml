@@ -214,7 +214,7 @@ spectateur . déplacements . locale . nombre:
 
 spectateur . déplacements . locale . moyen transport:
   applicable si: déplacements . locale . nombre > 0
-  question: Quel moyen de transport utilisez-vous en général pour vous rendre comme spectateur sur des événements sportifs d'envergure locale ou régionale ?
+  question: Quel moyen de transport utilisez-vous en général pour vos déplacements d'envergure locale ou régionale pour assister à des événements sportifs ?
   une possibilité: 
     choix obligatoire: oui
     possibilités: 
