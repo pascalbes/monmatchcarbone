@@ -1,0 +1,15 @@
+spectateur . réduction numérique:
+  titre: Réduire mon temps devant un écran
+  applicable si:
+    une de ces conditions:
+      - spectateur . numérique . télévision . visionnage > 0
+      - spectateur . numérique . tablette > 0
+      - spectateur . numérique . ordinateur > 0
+      - spectateur . numérique . téléphone > 0
+  formule:
+    somme:
+      - spectateur . numérique . télévision . visionnage
+      - spectateur . numérique . tablette
+      - spectateur . numérique . ordinateur
+      - spectateur . numérique . téléphone
+

@@ -20,14 +20,21 @@ equipements . pratique . coefficient effort matériel:
   formule:
     variations: 
       - si: effort = 'faible effort'
-        alors:
-          valeur: 1.5
+        alors: effort faible
       - si: effort = 'Moyen'
-        alors:
-          valeur: 1
+        alors: effort moyen
       - si: effort = 'Maximum'
-        alors:
-          valeur: 0.75
+        alors: effort maximum
+
+equipements . pratique . coefficient effort matériel . effort faible:
+  formule: 1.5
+
+equipements . pratique . coefficient effort matériel . effort moyen:
+  formule: 1
+
+equipements . pratique . coefficient effort matériel . effort maximum:
+  formule: 0.75
+
 
 equipements . pratique . coefficient effort matériel . effort:
   question: Quel effort faites-vous pour garder votre matériel le plus longtemps possible ?
@@ -102,7 +109,6 @@ equipements . pratique:
       - tir
       - cycliste
       - escrime
-
 
 # Sports collectifs
 

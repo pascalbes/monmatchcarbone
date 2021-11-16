@@ -61,3 +61,94 @@ transport . Aller au sport en transports en commun plutôt qu'en voiture:
     [70%](https://www.ecologie-solidaire.gouv.fr/covoiturage-en-france-avantages-et-reglementationen-vigueur) des déplacements sont réalisés avec des véhicules individuels, la plupart seuls dans sa voiture. C'est ce qu'on appelle l'auto-solisme.
     En plus d'émettre beaucoup de gaz à effet de serre cet autosolisme déteriore la qualité de l'air de nos villes et donc notre santé, et encombre les voies urbaines.
     > A titre d'exemple les bouchons représentent en Île-de-France par an et par personne [163 heures perdues](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) soit environ 6 jours. 
+
+
+
+# Eco Conduite
+
+transport . adopter une éco-conduite: 
+  unité: kgCO2e
+  formule:
+    somme:
+     - transport
+     - compétition
+     - spectateur
+
+transport . adopter une éco-conduite . transport :
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: transport . voiture . présent
+        alors: transport . voiture . impact usage * 0.15
+      - sinon: 0
+
+transport . adopter une éco-conduite . compétition :
+  unité: kgCO2e
+  somme: 
+   - Nationale
+   - Régionale
+   - Départementale
+   - compétition . déplacements . Internationale . Voiture * 0.15
+
+transport . adopter une éco-conduite . compétition . Nationale :
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: compétition . déplacements . Nationale . moyen transport = 'Voiture'
+        alors: compétition . déplacements . Nationale * 0.15
+      - sinon: 0
+
+transport . adopter une éco-conduite . compétition . Régionale :
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: compétition . déplacements . Régionale . moyen transport = 'Voiture'
+        alors: compétition . déplacements . Régionale * 0.15
+      - sinon: 0
+
+transport . adopter une éco-conduite . compétition . Départementale :
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: compétition . déplacements . Départementale . moyen transport = 'Voiture'
+        alors: compétition . déplacements . Départementale * 0.15
+      - sinon: 0
+
+transport . adopter une éco-conduite . spectateur :
+  unité: kgCO2e
+  somme: 
+   - locale
+   - spectateur . déplacements . nationale ou internationale . Voiture * 0.15
+
+transport . adopter une éco-conduite . spectateur . locale :
+  unité: kgCO2e
+  formule:
+    variations: 
+      - si: spectateur . déplacements . locale . moyen transport = 'Voiture'
+        alors: spectateur . déplacements . locale * 0.15
+      - sinon: 0
+
+
+
+transport . compétition train pour avion:
+  titre: Privilégier le train au lieu de l'avion pour me rendre sur mes lieux de compétition
+  applicable si: 
+    une de ces conditions:
+      - compétition . déplacements . Nationale . moyen transport = 'Avion'
+      - compétition . déplacements . Internationale . Avion > 0
+  formule:
+    somme:
+      - compétition . déplacements . Internationale . Avion * 39 / 40
+      - compétition . déplacements . Nationale * 39 / 40
+
+
+transport . spectateur train pour avion:
+  titre: Privilégier le train au lieu de l'avion lorsque je me déplace comme spectateur
+  applicable si: spectateur . déplacements . nationale ou internationale . Avion > 0
+  formule: spectateur . déplacements . nationale ou internationale . Avion * 39 / 40
+
+
+transport . covoiturage:
+  titre: Aller au sport en covoiturage
+  applicable si: transport . voiture . présent
+  formule: transport . voiture . impact usage * 0.5
