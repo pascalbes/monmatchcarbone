@@ -1,5 +1,9 @@
 spectateur . réduction numérique:
   titre: Réduire mon temps devant un écran
+  description: | 
+    Le streaming vidéo contribue aux émissions de GES (d'autant plus quand on utilise la connexion mobile) car il nécessite en réalité une multitude d'infrastructures. 
+    En limiter sa consommation, ici d'une heure par jour quand on y passe plus de 2h, et privilégier des alternatives comme la lecture permet de réduire son empreinte carbone numérique.
+    
   applicable si:
     une de ces conditions:
       - spectateur . numérique . télévision . visionnage > 0

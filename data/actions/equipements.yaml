@@ -1,5 +1,7 @@
 equipements . durabilité:
   titre: Garder mes équipements plus longtemps
+  description: | 
+    Eviter de renouveler son matériel trop fréquemment permet de réduire la quantité de matériel fabriqué et donc toute l'énergie associée à ces fabrications. 
   applicable si:
     une de ces conditions:
       - equipements . pratique . coefficient effort matériel . effort = 'faible effort'
@@ -40,8 +42,12 @@ equipements . durabilité . total avant:
       - equipements . pratique . cycliste . equipement
       - equipements . pratique . escrime . equipement
 
+
 equipements . sport plein air:
   titre: Réaliser mon sport en plein air
+  description: | 
+    Les salles intérieures sont maintenues en température pour la pratique du sport. En fonction de la fréquentation des salles il s'agit parfois de faire monter en température des dizaines de m3 d'espaces. 
+    Si j'en ai la possibilité, pratiquer mon sport en plein air permet d'éviter de chauffer ces salles et donc toutes les émissions de gaz à effet de serre associées
   applicable si:
     une de ces conditions:
       - equipements . pratique . sports de raquette . présent

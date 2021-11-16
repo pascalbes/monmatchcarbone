@@ -1,0 +1,39 @@
+sensibilisation:
+
+sensibilisation . aider les autres:
+  titre: Baisser l'empreinte des autres
+  icônes: 📢🌍
+  description: | 
+    Il arrive un moment où gagner des kilos devient très compliqué. 
+    Si votre empreinte est déjà très faible, ou si certaines contraintes rendent vos progrès impossibles, vous avez probablement plus intérêt à aider les autres à réduire leur empreinte qu'à vous torturer sur la votre. 
+    Comment ? En diffusant ce simulateur, en discutant de ces sujets avec vos proches, en animant des ateliers en entreprise ou association, ou même en aidant de façon pratique quelqu'un à changer l'une de ses consommations polluantes. 
+
+
+sensibilisation . pression locale:
+  titre: Faire pression localement
+  icônes: 📢🌍
+  description: | 
+    L'empreinte des équipements est souvent lié à l'utilisation d'équipements publics, c'est donc l'empreinte d'activités gérées par des collectivités territoriales autour de chez vous.
+    🚸 Votre gymnase, piscine ou salle de sport est peut-être une passoire thermique
+
+    🛣️ Votre ville construit de nombreux kilomètres de routes et peu d'alternatives à la voiture pour se rendre sur votre lieu de sport
+
+    La première étape est d'enquêter, puis simplement discuter de cela avec des amis et les reponsables en mesure d'agir.
+
+
+
+sensibilisation . diffusion NGC:
+  titre: Diffuser Nos Gestes Climat ! 
+  icônes: 📢🌍
+  description: | 
+    En plus des actions que vous pouvez prendre, calculez votre empreinte carbone personnelle au-delà de vos activités sportives en utilisant le simulateur Nos Gestes Climat ! (lien à ajouter) puis diffusez le à vos proches, vos collègues, le partager sur les réseaux sociaux, etc. c'est aussi un moyen fort de contribuer à la réduction des émissions de CO2 !
+
+    C'est certes un tout petit impact numérique en plus (bien moins de 1kgCO2e, enfin sauf si vous êtes une grande star des réseaux 🤩 !), mais c'est surtout potentiellement beaucoup d'impact en termes de changement ! 📉 Si ces personnes décident des mêmes actions que vous, imaginez l'effet démultiplicateur ! 
+
+sensibilisation . diffusion MMC:
+  titre: Diffuser Mon Match Carbone !
+  icônes: 📢🌍
+  description: | 
+    En plus des actions que vous pouvez prendre, parler de ce simulateur à vos proches, vos collègues, le partager sur les réseaux sociaux, etc. c'est aussi un moyen fort de contribuer à la réduction des émissions de CO2 !
+
+    C'est certes un tout petit impact numérique en plus (bien moins de 1kgCO2e, enfin sauf si vous êtes une grande star des réseaux 🤩 !), mais c'est surtout potentiellement beaucoup d'impact en termes de changement ! 📉 Si ces personnes décident des mêmes actions que vous, imaginez l'effet démultiplicateur ! 

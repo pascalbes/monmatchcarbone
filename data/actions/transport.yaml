@@ -39,7 +39,7 @@ transport . arrêter l'avion:
     Deuxièmement, on ne peut comparer la voiture et l'avion simplement parce qu'un trajet en avion est en général bien plus long. Quand il s'agit de choisir la destination des vacances par exemple, un trajet en voiture a donc toutes les chances d'être beaucoup moins polluant. Cela dit, notons aussi que nos kilométrages en voiture sont tels que le match est relancé quand on regarde l'empreinte à l'année.
 
 transport . Aller au sport en vélo plutôt qu'en voiture: 
-  icônes: 🛬🧳
+  icônes: 🚴‍♀️
   applicable si: 
     une de ces conditions:
       - transport . voiture > 1
@@ -51,7 +51,7 @@ transport . Aller au sport en vélo plutôt qu'en voiture:
     > A titre d'exemple les bouchons représentent en Île-de-France par an et par personne [163 heures perdues](https://www.tomtom.com/en_gb/traffic-index/paris-traffic) soit environ 6 jours. 
 
 transport . Aller au sport en transports en commun plutôt qu'en voiture: 
-  icônes: 🛬🧳
+  icônes: 🚌
   applicable si: 
     une de ces conditions:
       - transport . voiture > 1
@@ -68,6 +68,15 @@ transport . Aller au sport en transports en commun plutôt qu'en voiture:
 
 transport . adopter une éco-conduite: 
   unité: kgCO2e
+  description: |
+    L’éco-conduite est une action simple et efficace qui se tient à la portée de tous.  
+    
+    Elle permet notamment d'économiser en moyenne 15 % de carburant, 
+    de réduire les coûts d’entretien du véhicule, de réduire le risque d’accident de 10 à 15 % en moyenne et de réaliser des économies substantielles pouvant 
+    s’élever à plusieurs centaines d’euros. 
+    
+    L’application de l’éco-conduite est d’autant plus pertinente en ville et en zone urbaine ou les arrêts et 
+    le redémarrage sont fréquents. 
   formule:
     somme:
      - transport
@@ -140,15 +149,33 @@ transport . compétition train pour avion:
     somme:
       - compétition . déplacements . Internationale . Avion * 39 / 40
       - compétition . déplacements . Nationale * 39 / 40
+  description: |
+    L’avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. 
+    En effet, il existe notamment un rapport de 100 entre les facteurs d’émissions (quantité de CO2 émise par km parcouru) d’un avion et d’un train. 
+    > À titre d’exemple, un aller-retour Paris-Marseille émet environ 300 kgCO2eq en avion contre seulement 2 kgCO2eq en train. 
+    C’est pourquoi adapter nos week-ends et nos vacances en nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l’on souhaite tant à l’échelle individuelle qu’à l’échelle de la société réduire notre impact sur le climat [Comparez les modes de transport ici](https://monimpacttransport.fr) 
 
 
 transport . spectateur train pour avion:
   titre: Privilégier le train au lieu de l'avion lorsque je me déplace comme spectateur
   applicable si: spectateur . déplacements . nationale ou internationale . Avion > 0
   formule: spectateur . déplacements . nationale ou internationale . Avion * 39 / 40
+  description: |
+    L’avion a bouleversé nos modes de vies et nos façons de voyager. Nous pouvons maintenant aller plus loin, plus vite, plus fréquemment, mais ce n'est malheureusement pas sans contrepartie pour le climat. 
+    En effet, il existe notamment un rapport de 100 entre les facteurs d’émissions (quantité de CO2 émise par km parcouru) d’un avion et d’un train. 
+    > À titre d’exemple, un aller-retour Paris-Marseille émet environ 300 kgCO2eq en avion contre seulement 2 kgCO2eq en train. 
+    C’est pourquoi adapter nos week-ends et nos vacances en nous tournant vers des offres de mobilités bas carbone et/ou en repensant notre manière de voyager est essentiel si l’on souhaite tant à l’échelle individuelle qu’à l’échelle de la société réduire notre impact sur le climat [Comparez les modes de transport ici](https://monimpacttransport.fr) 
 
 
 transport . covoiturage:
   titre: Aller au sport en covoiturage
-  applicable si: transport . voiture . présent
+  applicable si: 
+    toutes ces conditions:
+      - transport . voiture . présent
+      - transport . voiture . voyageurs < 2
   formule: transport . voiture . impact usage * 0.5
+  description: |
+    Si le covoiturage longue distance est bien connu en France, celui des courtes distances est presque inexistant (par exemple, aujourd’hui seuls 3 % des déplacements domicile-travail sont réalisés en covoiturage).
+
+    Pensez à adapter votre mode de transport à la distance et à privilégier les modes doux ou transports en commun (bus, métro, vélo, marche, etc.) le plus possible. Le calculateur [Mon Impact Transport](https://monimpacttransport.fr/) vous permet de visualiser et comparer l'impact des différents modes de déplacement.
+
