@@ -276,7 +276,7 @@ spectateur . déplacements . nationale ou internationale . Avion . nombre:
   unité: h
 
 spectateur . déplacements . nationale ou internationale . Avion . empreinte:
-  formule: 200
+  formule: 106.15
   unité: kgCO2e/h
 
 spectateur . déplacements . nationale ou internationale . Voiture:
@@ -290,7 +290,7 @@ spectateur . déplacements . nationale ou internationale . Voiture . nombre:
   unité: h
 
 spectateur . déplacements . nationale ou internationale . Voiture . empreinte:
-  formule: 100
+  formule: 20.14
   unité: kgCO2e/h
 
 spectateur . déplacements . nationale ou internationale . Bus:
@@ -304,7 +304,7 @@ spectateur . déplacements . nationale ou internationale . Bus . nombre:
   unité: h
 
 spectateur . déplacements . nationale ou internationale . Bus . empreinte:
-  formule: 100
+  formule: 2.81
   unité: kgCO2e/h
 
 spectateur . déplacements . nationale ou internationale . Train:
@@ -319,5 +319,5 @@ spectateur . déplacements . nationale ou internationale . Train . nombre:
   unité: h
 
 spectateur . déplacements . nationale ou internationale . Train . empreinte:
-  formule: 100
+  formule: 1.06
   unité: kgCO2e/h

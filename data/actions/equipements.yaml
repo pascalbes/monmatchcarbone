@@ -1,0 +1,69 @@
+equipements . durabilité:
+  titre: Garder mes équipements plus longtemps
+  description: | 
+    Eviter de renouveler son matériel trop fréquemment permet de réduire la quantité de matériel fabriqué et donc toute l'énergie associée à ces fabrications. 
+  applicable si:
+    une de ces conditions:
+      - equipements . pratique . coefficient effort matériel . effort = 'faible effort'
+      - equipements . pratique . coefficient effort matériel . effort = 'Moyen'
+  formule:
+    variations: 
+      - si: equipements . pratique . coefficient effort matériel . effort = 'faible effort'
+        alors: total avant - total avant / effort faible * effort maximum
+      - si: equipements . pratique . coefficient effort matériel . effort = 'Moyen'
+        alors: total avant - total avant / effort moyen * effort maximum
+
+equipements . durabilité . effort faible:
+  formule: equipements . pratique . coefficient effort matériel . effort faible
+
+equipements . durabilité . effort moyen:
+  formule: equipements . pratique . coefficient effort matériel . effort moyen
+
+equipements . durabilité . effort maximum:
+  formule: equipements . pratique . coefficient effort matériel . effort maximum
+
+equipements . durabilité . total avant:
+  formule:
+    somme:
+      - equipements . pratique . sports collectifs . equipement
+      - equipements . pratique . sports de raquette . equipement
+      - equipements . pratique . sports suivants1 . equipement
+      - equipements . pratique . sports aquatiques . equipement
+      - equipements . pratique . sports de combat . equipement
+      - equipements . pratique . sports hiver . equipement
+      - equipements . pratique . sports motorisés . equipement
+      - equipements . pratique . sports suivants2 . equipement
+      - equipements . pratique . natation bassin . equipement
+      - equipements . pratique . sport sous marin . equipement
+      - equipements . pratique . sport de glace . equipement
+      - equipements . pratique . equitation . equipement
+      - equipements . pratique . golf . equipement
+      - equipements . pratique . tir . equipement
+      - equipements . pratique . cycliste . equipement
+      - equipements . pratique . escrime . equipement
+
+
+equipements . sport plein air:
+  titre: Réaliser mon sport en plein air
+  description: | 
+    Les salles intérieures sont maintenues en température pour la pratique du sport. En fonction de la fréquentation des salles il s'agit parfois de faire monter en température des dizaines de m3 d'espaces. 
+    Si j'en ai la possibilité, pratiquer mon sport en plein air permet d'éviter de chauffer ces salles et donc toutes les émissions de gaz à effet de serre associées
+  applicable si:
+    une de ces conditions:
+      - equipements . pratique . sports de raquette . présent
+      - equipements . pratique . sports de combat . présent
+      - equipements . pratique . sports suivants2 . présent
+      - equipements . pratique . natation bassin . présent
+      - equipements . pratique . tir . présent
+      - equipements . pratique . escrime . présent
+  formule: energie * 14 / 15
+
+equipements . sport plein air . energie:
+  formule:
+    somme:
+      - equipements . pratique . sports de raquette . energie
+      - equipements . pratique . sports de combat . energie
+      - equipements . pratique . sports suivants2 . energie
+      - equipements . pratique . natation bassin . energie
+      - equipements . pratique . tir . energie
+      - equipements . pratique . escrime . energie
