@@ -113,7 +113,7 @@ equipements . pratique:
 # Sports collectifs
 
 equipements . pratique . sports collectifs:
-  titre: Sports collectifs
+  titre: Sports Collectifs
   description: |
     Football / Handball / Basket / Rugby / Volley ...
   icônes: 🏀⚽️🤾‍♀️🏐
