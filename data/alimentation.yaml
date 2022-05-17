@@ -243,7 +243,7 @@ alimentation . boisson . eau en bouteille . affirmatif:
 
     Si vous achetez régulièrement des packs d'eau en bouteille au supermarché ou si vous achetez une petite bouteille chaque jour à la cantine du boulot, répondez oui.
   note: | 
-    Les français boivent en moyenne entre 100 et 150 litres d'eau en bouteille par an [source](https://www.planetoscope.com/consommation-eau/854-litres-d-eau-en-bouteille-vendus-en-france.html), soit environ un tiers de nos besoins de 1-1,5l par jour [source](https://www.mangerbouger.fr/Le-Mag/Bien-etre/L-eau-indispensable-a-notre-bonne-sante).
+    Les Français boivent en moyenne entre 100 et 150 litres d'eau en bouteille par an [source](https://www.planetoscope.com/consommation-eau/854-litres-d-eau-en-bouteille-vendus-en-france.html), soit environ un tiers de nos besoins de 1-1,5l par jour [source](https://www.mangerbouger.fr/Le-Mag/Bien-etre/L-eau-indispensable-a-notre-bonne-sante).
 
     Nous avons considéré que la valeur par défaut était donc "non".
 
@@ -702,7 +702,7 @@ alimentation . déchets . base:
   formule: 193 * facteur carbone CO2
   unité: kgCO2e
   note: | 
-    Attention : notre source est un article écrit en 2003, qui semble basé sur la composition de la poubelle d'un français mesurée en 1998. 
+    Attention : notre source est un article écrit en 2003, qui semble basé sur la composition de la poubelle d'un Français mesurée en 1998. 
 
     On y apprend aussi que ces déchets ont augmenté de 33% en 10 ans de 1980 à 1990. 
 
